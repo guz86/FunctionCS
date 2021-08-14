@@ -8,11 +8,13 @@ namespace Junior
         {
             Console.WriteLine("Привет");
 
-            WriteError("Ошибка. Нет интернета.");
+            // WriteError("Ошибка. Нет интернета.", ConsoleColor.Red);
+            WriteError("Ошибка. Нет интернета.", symbol: '!');
 
             Console.WriteLine("Не может быть");
             // в функцию из программы передается аргумент "Оплати интернет"
-            WriteError("Оплати интернет");
+            // WriteError("Оплати интернет", ConsoleColor.Red);
+            WriteError("Оплати интернет", ConsoleColor.Yellow);
 
             // функция с возвращаемыми значениями
             //Console.WriteLine(Sum(4, 5) );
@@ -24,14 +26,17 @@ namespace Junior
         }
         // передаем параметр в функцию , что хотим получить string text
         // void пустота
-        static void WriteError(string text)
+        // static void WriteError(string text)
+        // static void WriteError(string text, ConsoleColor color)
+        // необезательные параметры ставятся в конце
+        static void WriteError(string text, ConsoleColor color = ConsoleColor.Red, char symbol = '#')
         {
             // запомним в переменную текущий цвет текста в консли
             ConsoleColor defaulColor = Console.ForegroundColor;
             // сообщение выводится красным
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = color;
 
-            Console.WriteLine(text);
+            Console.WriteLine(symbol + text);
 
             // возвращаем текущий цвет
             Console.ForegroundColor = defaulColor;
