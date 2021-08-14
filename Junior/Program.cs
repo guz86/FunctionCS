@@ -14,10 +14,13 @@ namespace Junior
             // в функцию из программы передается аргумент "Оплати интернет"
             WriteError("Оплати интернет");
 
+            // функция с
+            Sum();
 
 
         }
         // передаем параметр в функцию , что хотим получить string text
+        // void пустота
         static void WriteError(string text)
         {
             // запомним в переменную текущий цвет текста в консли
@@ -30,5 +33,15 @@ namespace Junior
             // возвращаем текущий цвет
             Console.ForegroundColor = defaulColor;
         }
+        // параметры х у
+        static int Sum(int x, int y)
+        {
+            int sum;
+            sum = x + y;
+            return sum;   
+
+        }
+       
+
     }
 }
