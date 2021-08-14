@@ -26,7 +26,15 @@ namespace Junior
 
             int uSum = 0, uX = 2, uY = 3;
 
-            MySum(uSum, uX, uY);
+            // MySum(uSum, uX, uY);
+            // 0
+
+            MySum(ref uSum, uX, uY);
+            Console.WriteLine(uSum);
+
+
+
+
 
         }
         // передаем параметр в функцию , что хотим получить string text
@@ -57,8 +65,9 @@ namespace Junior
 
         // ref out
         // как данные передаются в функцию
-
-        static void MySum(int sum, int x, int y)
+        // ref - передаем не переменную, а ссылку на область памяти где храниться переменная
+        //static void MySum(int sum, int x, int y)
+        static void MySum(ref int sum, int x, int y)
         {
             sum = x + y;
 
