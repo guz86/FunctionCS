@@ -24,12 +24,22 @@ namespace Junior
 
             Console.WriteLine("-------------");
 
-            int uSum = 0, uX = 2, uY = 3;
+            //int uSum = 0, uX = 2, uY = 3;
+
+            // если мы оставляем uSum без инициализации используем out
+            int uSum, uX = 2, uY = 3;
+
+            // при !ref uSum! требуется обязательно проинициализировать переменную  int uSum = 0  
 
             // MySum(uSum, uX, uY);
             // 0
 
-            MySum(ref uSum, uX, uY);
+            //MySum(ref uSum, uX, uY);
+
+            //out - обязует самостоятельно проиниализировать переменную
+
+            MySum(out uSum, uX, uY);
+
             Console.WriteLine(uSum);
 
 
@@ -63,11 +73,14 @@ namespace Junior
 
         }
 
+
+        //
         // ref out
         // как данные передаются в функцию
         // ref - передаем не переменную, а ссылку на область памяти где храниться переменная
         //static void MySum(int sum, int x, int y)
-        static void MySum(ref int sum, int x, int y)
+        //static void MySum(ref int sum, int x, int y)
+        static void MySum(out int sum, int x, int y)
         {
             sum = x + y;
 
