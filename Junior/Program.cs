@@ -45,7 +45,10 @@ namespace Junior
             Console.WriteLine("-------------");
 
             int[]  myArray = new int [5];
-            EditArray(myArray, 2, 5);
+            // передаем ссылку на область памяти
+            // EditArray(myArray, 2, 5);
+
+            myArray = EditArray(myArray, 2, 5);
             Console.WriteLine(myArray[2]);
 
 
@@ -90,9 +93,13 @@ namespace Junior
         }
 
         // функция модицифирует массив
-        static void EditArray(int[] array, int index, int value)
+        static int[] EditArray(int[] array, int index, int value)
         {
+            // пересоздаем массив
+            array = new int[6];
             array[index]= value;
+            // возвращаем массив чтобы передать расширенный
+            return array;
         }
        
 
