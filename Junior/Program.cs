@@ -14,8 +14,11 @@ namespace Junior
             // в функцию из программы передается аргумент "Оплати интернет"
             WriteError("Оплати интернет");
 
-            // функция с
-            Sum(4,5);
+            // 
+            //Console.WriteLine(Sum(4, 5) );
+            int x = 5, y = 3, sum;
+            sum = Sum(x, y);
+            Console.WriteLine(sum);
 
 
         }
