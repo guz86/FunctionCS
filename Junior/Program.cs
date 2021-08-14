@@ -22,6 +22,11 @@ namespace Junior
             sum = Sum(l, u) + l + u;
             Console.WriteLine(sum + " " + Sum(u, l));
 
+            Console.WriteLine("-------------");
+
+            int uSum = 0, uX = 2, uY = 3;
+
+            MySum(uSum, uX, uY);
 
         }
         // передаем параметр в функцию , что хотим получить string text
@@ -49,6 +54,16 @@ namespace Junior
             return sum;   
 
         }
+
+        // ref out
+        // как данные передаются в функцию
+
+        static void MySum(int sum, int x, int y)
+        {
+            sum = x + y;
+
+        }
+
        
 
     }
