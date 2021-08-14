@@ -4,6 +4,7 @@ namespace Junior
 {
     class Program
     {
+        // Функции - как передовать обычные данные как передовать массивы
         static void Main(string[] args)
         {
             Console.WriteLine("Привет");
@@ -48,7 +49,7 @@ namespace Junior
             // передаем ссылку на область памяти
             // EditArray(myArray, 2, 5);
 
-            myArray = EditArray(myArray, 2, 5);
+            myArray = EditArray(myArray, 2, 10);
             Console.WriteLine(myArray[2]);
 
 
