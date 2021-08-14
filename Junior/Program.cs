@@ -15,7 +15,7 @@ namespace Junior
             WriteError("Оплати интернет");
 
             // функция с
-            Sum();
+            Sum(4,5);
 
 
         }
