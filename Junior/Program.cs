@@ -42,8 +42,11 @@ namespace Junior
 
             Console.WriteLine(uSum);
 
+            Console.WriteLine("-------------");
 
-
+            int[]  myArray = new int [5];
+            EditArray(myArray, 2, 5);
+            Console.WriteLine(myArray[2]);
 
 
         }
@@ -75,7 +78,7 @@ namespace Junior
 
 
         //
-        // ref out
+        // ref out -  когда нужно вернуть из функции больше 1 значения
         // как данные передаются в функцию
         // ref - передаем не переменную, а ссылку на область памяти где храниться переменная
         //static void MySum(int sum, int x, int y)
@@ -86,6 +89,11 @@ namespace Junior
 
         }
 
+        // функция модицифирует массив
+        static void EditArray(int[] array, int index, int value)
+        {
+            array[index]= value;
+        }
        
 
     }
