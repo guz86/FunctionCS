@@ -53,6 +53,15 @@ namespace Junior
             Console.WriteLine(myArray[2]);
 
 
+
+            Console.WriteLine("-------------");
+            int[] myArrayResize = new int[5];
+            int[,] myArrayResizeTwo = new int[5, 5];
+
+            myArrayResize = ResizeArray(myArrayResize, 10);
+            myArrayResizeTwo = ResizeArray(myArrayResizeTwo, 10, 10);
+
+
         }
         // передаем параметр в функцию , что хотим получить string text
         // void пустота
@@ -102,7 +111,34 @@ namespace Junior
             // возвращаем массив чтобы передать расширенный
             return array;
         }
-       
+
+        // пересоздаем массив с новым размером // recreate an array with a new size
+        static int[] ResizeArray (int[] array, int size)
+        {   
+            int[] tempArray = new int[size];
+            // переносим данные в новый временный массив // migrate data to a new array
+            for (int i = 0; i < array.Length; i++)
+            {
+                tempArray[i] = array[i];
+            }
+            array = tempArray;
+            return array;
+        }
+
+        static int[,] ResizeArray (int[,] array, int x, int y)
+        {
+            int[,] tempArray = new int[x,y];
+            // переносим данные в новый временный массив // migrate data to a new array
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    tempArray[i,j] = array[i,j];
+                }
+            }
+            array = tempArray;
+            return array;
+        }
 
     }
 }
