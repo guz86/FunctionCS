@@ -85,7 +85,8 @@ namespace Junior
         {
             int sum;
             sum = x + y;
-            return sum;   
+            return sum;
+            return x;
 
         }
 
