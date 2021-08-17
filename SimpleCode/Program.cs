@@ -13,7 +13,7 @@ namespace SimpleCode
              int count = Convert.ToInt32(Console.ReadLine());
             string result = "";
             
-            for (int i = 1; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 result += symbol;
             }
