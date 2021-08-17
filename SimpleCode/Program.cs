@@ -21,19 +21,20 @@ namespace SimpleCode
 
         static int FindIndex(int [] userArray, int element )
         {
-            int indexElement = -1;
+            //int indexElement = -1;
 
             for (int i = 0; i < userArray.Length; i++)
             {
                 
                 if (element == userArray[i] )
                 {
-                    indexElement = i;
-                    break;
+                    //indexElement = i;
+                    //break;
+                    return i;
                 }
             }
 
-            return indexElement;
+            return -1;
         }
 
 
