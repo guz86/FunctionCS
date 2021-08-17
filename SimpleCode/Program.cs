@@ -19,7 +19,7 @@ namespace SimpleCode
              Console.WriteLine();
         }
 
-        static int FindIndex(int element, int [] userArray)
+        static int FindIndex(int [] userArray, int element )
         {
             int indexElement = -1;
 
@@ -50,10 +50,10 @@ namespace SimpleCode
 
             // ДЗ. Написать метод для поиска индекса элемента массива (тип элементов -int), метод должен вернуть индекс первого найденного элемента, если он будет найден.
             int[] myArray = { 1, 2, 3, 1, 4, 5, 7, 7, 8, 2, 1, 4 };
-            Console.WriteLine("Индекс цифры 5 - " + FindIndex(5, myArray));
+            Console.WriteLine("Индекс цифры 5 - " + FindIndex( myArray, 5));
             // должен возвращать отрицйательное число
-            Console.WriteLine("Индекс цифры 1 - " + FindIndex(99, myArray));
-            Console.WriteLine("Индекс цифры 4 - " + FindIndex(4, myArray));
+            Console.WriteLine("Индекс цифры 99 - " + FindIndex( myArray, 99));
+            Console.WriteLine("Индекс цифры 4 - " + FindIndex(myArray, 4));
 
         }
 
