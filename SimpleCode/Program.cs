@@ -12,13 +12,15 @@ namespace SimpleCode
             Console.Write("Введите количество: ");
             // не должно быть отрицательных uint
             uint count = Convert.ToUInt32(Console.ReadLine());
-            string result = "";
+            // string result = "";
             
             for (int i = 0; i < count; i++)
             {
-                result += symbol;
+                //result += symbol;
+                Console.Write(symbol);
             }
-            Console.WriteLine(result);
+            // Console.WriteLine(result);
+             Console.WriteLine();
         }
 
         static int FindIndex(int element, int [] userArray)
