@@ -26,7 +26,7 @@ namespace SimpleCode
             for (int i = 0; i < userArray.Length; i++)
             {
                 
-                if (element == userArray[i] )
+                if (userArray[i] == element)
                 {
                     //indexElement = i;
                     //break;
@@ -54,7 +54,8 @@ namespace SimpleCode
             Console.WriteLine("Индекс цифры 5 - " + FindIndex( myArray, 5));
             // должен возвращать отрицйательное число
             Console.WriteLine("Индекс цифры 99 - " + FindIndex( myArray, 99));
-            Console.WriteLine("Индекс цифры 4 - " + FindIndex(myArray, 4));
+            int result = FindIndex(myArray, 4);
+            Console.WriteLine("Индекс цифры 4 - " + result);
 
         }
 
