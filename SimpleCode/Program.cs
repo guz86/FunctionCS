@@ -52,7 +52,7 @@ namespace SimpleCode
             // ДЗ. Написать метод для поиска индекса элемента массива (тип элементов -int), метод должен вернуть индекс первого найденного элемента, если он будет найден.
             int[] myArray = { 1, 2, 3, 1, 4, 5, 7, 7, 8, 2, 1, 4 };
             Console.WriteLine("Индекс цифры 5 - " + FindIndex( myArray, 5));
-            // должен возвращать отрицйательное число
+            // должен возвращать отрицательное число
             Console.WriteLine("Индекс цифры 99 - " + FindIndex( myArray, 99));
             int result = FindIndex(myArray, 4);
             Console.WriteLine("Индекс цифры 4 - " + result);
