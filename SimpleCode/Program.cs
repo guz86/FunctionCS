@@ -10,7 +10,8 @@ namespace SimpleCode
             Console.Write("Введите символ: ");
             string symbol = Console.ReadLine(); 
             Console.Write("Введите количество: ");
-             int count = Convert.ToInt32(Console.ReadLine());
+            // не должно быть отрицательных uint
+            uint count = Convert.ToUInt32(Console.ReadLine());
             string result = "";
             
             for (int i = 0; i < count; i++)
