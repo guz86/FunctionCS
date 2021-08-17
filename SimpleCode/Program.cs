@@ -5,13 +5,9 @@ namespace SimpleCode
     class Program
     {
 
-        static void PrintString()
+        static void PrintString(char symbol, uint count)
         {
-            Console.Write("Введите символ: ");
-            string symbol = Console.ReadLine(); 
-            Console.Write("Введите количество: ");
-            // не должно быть отрицательных uint
-            uint count = Convert.ToUInt32(Console.ReadLine());
+
             // string result = "";
             
             for (int i = 0; i < count; i++)
@@ -45,7 +41,12 @@ namespace SimpleCode
         static void Main(string[] args)
         {
             // ДЗ. Метод выводит на экран строку. Символы из которых состоит строка и их количество вводятся пользователем.
-            PrintString();
+            Console.Write("Введите символ: ");
+            char symbol = Console.ReadKey().KeyChar;
+            Console.Write("\nВведите количество: ");
+            // не должно быть отрицательных uint
+            uint count = Convert.ToUInt32(Console.ReadLine());
+            PrintString(symbol, count);
 
             // ДЗ. Написать метод для поиска индекса элемента массива (тип элементов -int), метод должен вернуть индекс первого найденного элемента, если он будет найден.
             int[] myArray = { 1, 2, 3, 1, 4, 5, 7, 7, 8, 2, 1, 4 };
