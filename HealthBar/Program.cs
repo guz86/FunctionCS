@@ -11,13 +11,15 @@ namespace HealthBar
 
             while (true)
             {
-                Console.Write("Изменим жизни на ");
+
+                DrawBar(health, maxHealth, ConsoleColor.DarkRed, 0);
+                DrawBar(mana, maxMana, ConsoleColor.DarkBlue, 1);
+
+                Console.Write("\nИзменим жизни на ");
                 health += Convert.ToInt32(Console.ReadLine());
                 Console.Write("Изменим ману на ");
                 mana += Convert.ToInt32(Console.ReadLine());
-                Console.Clear();
-                DrawBar(health, maxHealth, ConsoleColor.DarkRed, 0);
-                DrawBar(mana, maxMana, ConsoleColor.DarkBlue, 1);
+                
 
                 Console.ReadKey();
 
