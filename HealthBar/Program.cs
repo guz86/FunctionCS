@@ -7,9 +7,11 @@ namespace HealthBar
         static void Main(string[] args)
         {
             int health = 5, maxHealth = 10;
-            DrawBar(health, maxHealth, ConsoleColor.DarkGreen);
+            int mana = 3, maxMana = 10;
+            DrawBar(health, maxHealth, ConsoleColor.DarkRed,0);
+            DrawBar(mana, maxMana, ConsoleColor.DarkBlue,1);
         }
-        static void DrawBar(int value, int maxValue, ConsoleColor color)
+        static void DrawBar(int value, int maxValue, ConsoleColor color, int position)
         {
             // запомним обычный цвет консоли
             ConsoleColor defaultColor = Console.BackgroundColor;
@@ -20,7 +22,7 @@ namespace HealthBar
             }
 
             // позиция, цвет и вывод бара
-            Console.SetCursorPosition(0, 0);
+            Console.SetCursorPosition(0, position);
             Console.Write('[');
             Console.BackgroundColor = color;
             Console.Write(bar);
