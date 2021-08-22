@@ -8,8 +8,23 @@ namespace HealthBar
         {
             int health = 5, maxHealth = 10;
             int mana = 3, maxMana = 10;
-            DrawBar(health, maxHealth, ConsoleColor.DarkRed,0);
-            DrawBar(mana, maxMana, ConsoleColor.DarkBlue,1);
+
+            while (true)
+            {
+                Console.Write("Изменим жизни на ");
+                health += Convert.ToInt32(Console.ReadLine());
+                Console.Write("Изменим ману на ");
+                mana += Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                DrawBar(health, maxHealth, ConsoleColor.DarkRed, 0);
+                DrawBar(mana, maxMana, ConsoleColor.DarkBlue, 1);
+
+                Console.ReadKey();
+
+                Console.Clear();
+            }
+
+
         }
         static void DrawBar(int value, int maxValue, ConsoleColor color, int position)
         {
