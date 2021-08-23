@@ -8,6 +8,8 @@ namespace PacMan
         static void Main(string[] args)
         {
             char[,] map = ReadMap("map1");
+
+            DrawMap(map);
         }
        // функция считывает готовую карту из файла
        static char [,] ReadMap(string mapName)
@@ -25,10 +27,20 @@ namespace PacMan
                     maps[i, j] = newFile[i][j];
                 }
             }
-
-
             return maps;
-
+        }
+        
+        // отрисовываем карту
+        static void DrawMap(char[,] map)
+        {
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                for (int j = 0; j < map.GetLength(1); j++)
+                {
+                    Console.Write(map[i,j]);
+                }
+                Console.WriteLine();
+            }
         }
 
 
