@@ -7,13 +7,21 @@ namespace PacMan
     {
         static void Main(string[] args)
         {
-            char[,] map = ReadMap("map1");
+            int packmanX, packmanY;
+            char[,] map = ReadMap("map1", out packmanX, out packmanY);
 
             DrawMap(map);
+
+            Console.SetCursorPosition(packmanY, packmanX);
+            Console.Write('@');
+
         }
        // функция считывает готовую карту из файла
-       static char [,] ReadMap(string mapName)
+       static char [,] ReadMap(string mapName, out int packmanX, out int packmanY)
         {
+            //инициализация для работы
+            packmanX = 0;
+            packmanY = 0;
             string[] newFile = File.ReadAllLines($"Maps/{mapName}.txt");
             // newFile.Length количество строчек
             // newFile[0].Length - длина первой строчки
@@ -25,6 +33,11 @@ namespace PacMan
                 for (int j = 0; j < maps.GetLength(1); j++)
                 {
                     maps[i, j] = newFile[i][j];
+                    if (maps[i,j] == '@')
+                    {
+                        packmanX = i;
+                        packmanY = j;
+                    }
                 }
             }
             return maps;
