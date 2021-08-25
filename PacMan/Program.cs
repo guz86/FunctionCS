@@ -30,24 +30,9 @@ namespace PacMan
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
-                    switch (key.Key)
-                    {
-                        
-                        case ConsoleKey.LeftArrow:
-                            pacmanDX = 0; pacmanDY = -1;
-                            break;
-                        case ConsoleKey.UpArrow:
-                            pacmanDX = -1; pacmanDY = 0;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            pacmanDX = 0; pacmanDY = 1;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            pacmanDX = 1; pacmanDY = 0;
-                            break;
-                        default:
-                            break;
-                    }
+
+                    ChangeDirection(key, ref pacmanDX, ref pacmanDY);
+
                 }
                 if (map[pacmanX+ pacmanDX, pacmanY + pacmanDY] != '#')
                 {
@@ -96,6 +81,29 @@ namespace PacMan
 
             Console.SetCursorPosition(Y, X);
             Console.Write("@");
+        }
+
+        // выбор направления для движения
+        static void ChangeDirection(ConsoleKeyInfo key, ref int DX, ref int DY)
+        {
+            switch (key.Key)
+            {
+
+                case ConsoleKey.LeftArrow:
+                    DX = 0; DY = -1;
+                    break;
+                case ConsoleKey.UpArrow:
+                    DX = -1; DY = 0;
+                    break;
+                case ConsoleKey.RightArrow:
+                    DX = 0; DY = 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    DX = 1; DY = 0;
+                    break;
+                default:
+                    break;
+            }
         }
 
         // отрисовываем карту
