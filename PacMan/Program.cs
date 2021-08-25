@@ -51,12 +51,7 @@ namespace PacMan
                 }
                 if (map[pacmanX+ pacmanDX, pacmanY + pacmanDY] != '#')
                 {
-                    Console.SetCursorPosition(pacmanY, pacmanX);
-                    Console.Write(" ");
-                    pacmanY += pacmanDY;
-                    pacmanX += pacmanDX;
-                    Console.SetCursorPosition(pacmanY, pacmanX);
-                    Console.Write("@");
+                    Move(ref pacmanX, ref pacmanY, pacmanDX,pacmanDY);
                 }
                 System.Threading.Thread.Sleep(200);
             }
@@ -88,6 +83,19 @@ namespace PacMan
                 }
             }
             return maps;
+        }
+
+        // движение
+        static void Move(ref int X, ref int Y, int DX, int DY)
+        {
+            Console.SetCursorPosition(Y, X);
+            Console.Write(" ");
+
+            Y += DY;
+            X += DX;
+
+            Console.SetCursorPosition(Y, X);
+            Console.Write("@");
         }
 
         // отрисовываем карту
