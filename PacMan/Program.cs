@@ -14,13 +14,26 @@ namespace PacMan
 
             int pacmanX, pacmanY;
             int pacmanDX = 0, pacmanDY = 1;
+            bool isALive = true;
 
-            char[,] map = ReadMap("map1", out pacmanX, out pacmanY);
+            // enemy
+
+            int ghostX; int ghostY;
+            int ghostDX = 0, ghostDY = -1;
+            Random random = new Random();
+
+
+            int allDots = 0;
+            int collectDots = 0;
+
+            char[,] map = ReadMap("map1", out pacmanX, out pacmanY, out ghostX, out ghostY, ref allDots);
 
             DrawMap(map);
 
             while (isPlaying)
             {
+                Console.SetCursorPosition(0, 20);
+                Console.Write($"Box: {collectDots}/{allDots}");
                 Console.SetCursorPosition(pacmanY, pacmanX);
                 Console.Write('@');
 
@@ -34,21 +47,60 @@ namespace PacMan
                     ChangeDirection(key, ref pacmanDX, ref pacmanDY);
 
                 }
+                
                 if (map[pacmanX+ pacmanDX, pacmanY + pacmanDY] != '#')
                 {
-                    Move(ref pacmanX, ref pacmanY, pacmanDX,pacmanDY);
-                }
-                System.Threading.Thread.Sleep(200);
-            }
+                    CollectDots(map, pacmanX, pacmanY, ref collectDots);
+                    Move(map, '@', ref pacmanX, ref pacmanY, pacmanDX, pacmanDY);
 
+                }
+                // enemy
+                if (map[ghostX + ghostDX, ghostY + ghostDY] != '#')
+                {
+                    Move(map, '$', ref ghostX, ref ghostY, ghostDX, ghostDY); 
+                }
+                else
+                {
+                    ChangeDirection(random, ref ghostDX, ref ghostDY);
+                }
+
+                if (ghostX==pacmanX && ghostY == pacmanY)
+                {
+                    isALive = false;
+                }
+
+
+                System.Threading.Thread.Sleep(100);
+
+                if (collectDots == allDots || isALive == false)
+                {
+                    isPlaying = false;
+                }
+
+            }
+            if (collectDots == allDots)
+            {
+
+                Console.SetCursorPosition(0, 21);
+                Console.WriteLine("Победа");
+            }
+            else if (!isALive)
+            {
+
+                Console.SetCursorPosition(0, 21);
+                Console.WriteLine("Поражение");
+            }
 
         }
         // функция считывает готовую карту из файла
-        static char[,] ReadMap(string mapName, out int packmanX, out int packmanY)
+        static char[,] ReadMap(string mapName, out int packmanX, out int packmanY, out int ghostX, out int ghostY, ref int allDots)
         {
             //инициализация для работы
             packmanX = 0;
             packmanY = 0;
+
+             ghostX = 0;  ghostY = 0;
+
             string[] newFile = File.ReadAllLines($"Maps/{mapName}.txt");
             // newFile.Length количество строчек
             // newFile[0].Length - длина первой строчки
@@ -64,6 +116,18 @@ namespace PacMan
                     {
                         packmanX = i;
                         packmanY = j;
+                        maps[i, j] = '.';
+                    }
+                    else if (maps[i, j] == '$')
+                    {
+                        ghostX = i;
+                        ghostY = j;
+                        maps[i, j] = '.';
+                    }
+                    else if (maps[i, j] == ' ')
+                    {
+                        maps[i, j] = '.';
+                        allDots++;
                     }
                 }
             }
@@ -71,20 +135,33 @@ namespace PacMan
         }
 
         // движение
-        static void Move(ref int X, ref int Y, int DX, int DY)
+        static void Move(char [,] map, char symbol, ref int X, ref int Y, int DX, int DY)
         {
             Console.SetCursorPosition(Y, X);
-            Console.Write(" ");
+            Console.Write(map[X,Y]);
 
             Y += DY;
             X += DX;
 
             Console.SetCursorPosition(Y, X);
-            Console.Write("@");
+            Console.Write(symbol);
         }
 
-        // выбор направления для движения
-        static void ChangeDirection(ConsoleKeyInfo key, ref int DX, ref int DY)
+        // собираем точки
+        static void CollectDots(char [,] map, int pacmanX, int pacmanY,ref int collectDots)
+        {
+            if (map[pacmanX, pacmanY] == '.')
+            {
+                map[pacmanX, pacmanY] = ' ';
+                collectDots++;
+            }
+        }
+        
+
+
+
+    // выбор направления для движения
+    static void ChangeDirection(ConsoleKeyInfo key, ref int DX, ref int DY)
         {
             switch (key.Key)
             {
@@ -99,6 +176,30 @@ namespace PacMan
                     DX = 0; DY = 1;
                     break;
                 case ConsoleKey.DownArrow:
+                    DX = 1; DY = 0;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // enemy выбор направления для движения
+        static void ChangeDirection(Random random, ref int DX, ref int DY)
+        {
+            int ghostDir = random.Next(1, 5);
+            switch (ghostDir)
+            {
+
+                case 1:
+                    DX = 0; DY = -1;
+                    break;
+                case 2:
+                    DX = -1; DY = 0;
+                    break;
+                case 3:
+                    DX = 0; DY = 1;
+                    break;
+                case 4:
                     DX = 1; DY = 0;
                     break;
                 default:
