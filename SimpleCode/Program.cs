@@ -57,6 +57,11 @@ namespace SimpleCode
             int result = FindIndex(myArray, 4);
             Console.WriteLine("Индекс цифры 4 - " + result);
 
+
+
+
+
+
         }
 
 

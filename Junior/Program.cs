@@ -28,7 +28,8 @@ namespace Junior
             //int uSum = 0, uX = 2, uY = 3;
 
             // если мы оставляем uSum без инициализации используем out
-            int uSum, uX = 2, uY = 3;
+            // int uSum,
+                int uX = 2, uY = 3;
 
             // при !ref uSum! требуется обязательно проинициализировать переменную  int uSum = 0  
 
@@ -39,7 +40,7 @@ namespace Junior
 
             //out - обязует самостоятельно проиниализировать переменную
 
-            MySum(out uSum, uX, uY);
+            MySum(out int uSum, uX, uY);
 
             Console.WriteLine(uSum);
 
