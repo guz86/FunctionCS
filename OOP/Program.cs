@@ -18,6 +18,14 @@ namespace OOP
             tankOne.ShowStats();
             tankOne.TakeDamage(110);
             tankOne.ShowStats();
+            Console.WriteLine("--------");
+            // конструктор
+            MilitaryMan SolderOne = new MilitaryMan();
+            SolderOne.ShowStats();
+
+            MilitaryMan SolderTwo = new MilitaryMan(90, 40);
+            SolderTwo.ShowStats();
+
         }
     }
     
@@ -37,6 +45,32 @@ namespace OOP
             //this.Health
             Health -= damage-Armor;
             Console.WriteLine($"Take Damage: -{damage}hp");
+        }
+
+    }
+
+
+    // конструкторы
+
+    class MilitaryMan
+    {
+        public int Health;
+        public int Armor;
+        
+        public MilitaryMan()
+        {
+            Health = 100;
+            Armor = 50;
+        }
+        public MilitaryMan(int health, int armor)
+        {
+            Health = health;
+            Armor = armor;
+        }
+
+        public void ShowStats()
+        {
+            Console.WriteLine($"Health: {Health}, Armor: {Armor}");
         }
 
     }
