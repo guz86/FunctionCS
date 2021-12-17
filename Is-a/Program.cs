@@ -16,8 +16,8 @@ namespace Is_a
             barbarian.ShowInfo();
             barbarian.TakeDamage(30);
             barbarian.ShowInfo();
-
-            Knight knightTwo = new Knight(120,20,40);
+            
+            Knight knightTwo = new Knight(120,20,10);
             knightTwo.ShowInfo();
             knightTwo.TakeDamage(10);
             knightTwo.ShowInfo();
@@ -39,13 +39,13 @@ namespace Is_a
 
         public void TakeDamage(int damage)
         {
-            Health -= damage;
+            Health -= damage- Armor;
+            Console.WriteLine($"Нанесено {damage - Armor} урона");
         }
 
         public void ShowInfo()
         {
             Console.WriteLine($"Health: {Health}, Damage: {Damage}, Armor: {Armor}");
-            Console.WriteLine("----------------");
         }
 
     }
@@ -60,9 +60,10 @@ namespace Is_a
 
     class Barbarian : Warrior
     {
-        public Barbarian(int health = 200, int damage = 5, int armor = 2) : base(health, damage, armor)
+        protected int AttackSpeed;
+        public Barbarian(int health = 200, int damage = 5, int armor = 2, int attackSpeed = 5) : base(health, damage, armor)
         {
-
+            AttackSpeed = attackSpeed;
         }
     }
 }
