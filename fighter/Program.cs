@@ -18,6 +18,17 @@ namespace fighter
             {
                 fighters[i].ShowStats();
             }
+
+            Console.Write("Боец в левом углу: ");
+            int fighterLeft = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Боец в правом углу: ");
+            int fighterRight = Convert.ToInt32(Console.ReadLine());
+
+            while (fighters[fighterLeft].SetHealth() > 0 && fighters[fighterRight].SetHealth() > 0)
+            {
+
+            }
+
         }
     }
 
@@ -39,6 +50,11 @@ namespace fighter
         public void ShowStats()
         {
             Console.WriteLine($"{_name}, {_health} - health, {_armor} - armor, {_damage} - damage");
+        }
+
+        public int SetHealth()
+        {
+            return _health;
         }
 
     }
