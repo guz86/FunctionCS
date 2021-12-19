@@ -9,7 +9,7 @@ namespace fighter
 
             Fighter Heavy = new Fighter("John",100,5,15);
             Fighter Low = new Fighter("Leon", 80, 5, 25);
-            Fighter Maks = new Fighter("Leon", 90, 1, 35);
+            Fighter Maks = new Fighter("Max", 90, 1, 35);
             Fighter Sam = new Fighter("Sanya", 60, 0, 45);
            
             Fighter[] fighters= {Heavy, Low , Maks , Sam, new Fighter("Anton", 99, 0, 5) };
@@ -20,18 +20,29 @@ namespace fighter
             }
 
             Console.Write("Боец в левом углу: ");
-            int fighterLeft = Convert.ToInt32(Console.ReadLine());
+            //int fighterLeft = Convert.ToInt32(Console.ReadLine());
+
+            int fighterIndex = Convert.ToInt32(Console.ReadLine());
+            Fighter rightFighter = fighters[fighterIndex];
+
             Console.Write("Боец в правом углу: ");
-            int fighterRight = Convert.ToInt32(Console.ReadLine());
+            // int fighterRight = Convert.ToInt32(Console.ReadLine());
+            fighterIndex = Convert.ToInt32(Console.ReadLine());
+            Fighter leftFighter = fighters[fighterIndex];
 
-            while (fighters[fighterLeft].GetHealth() > 0 && fighters[fighterRight].GetHealth() > 0)
+
+            //while (fighters[fighterLeft].GetHealth() > 0 && fighters[fighterRight].GetHealth() > 0)
+            while (rightFighter.GetHealth() > 0 && leftFighter.GetHealth() > 0)
             {
-                fighters[fighterLeft].TakeDamage(fighters[fighterRight].GetDamage());
-                fighters[fighterRight].TakeDamage(fighters[fighterLeft].GetDamage());
+                //fighters[fighterLeft].TakeDamage(fighters[fighterRight].GetDamage());
+                //fighters[fighterRight].TakeDamage(fighters[fighterLeft].GetDamage());
+                leftFighter.TakeDamage(rightFighter.GetDamage());
+                rightFighter.TakeDamage(leftFighter.GetDamage());
 
-                fighters[fighterLeft].ShowStats();
-
-                fighters[fighterRight].ShowStats();
+                //fighters[fighterLeft].ShowStats();
+                //fighters[fighterRight].ShowStats();
+                rightFighter.ShowStats();
+                leftFighter.ShowStats();
                 Console.ReadLine();
             }
 
