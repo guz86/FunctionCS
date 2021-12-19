@@ -16,6 +16,7 @@ namespace fighter
 
             for (int i = 0; i < fighters.Length; i++)
             {
+                Console.Write($"Number: {i}. "); 
                 fighters[i].ShowStats();
             }
 
