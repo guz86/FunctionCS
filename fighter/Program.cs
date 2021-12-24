@@ -33,12 +33,12 @@ namespace fighter
 
 
             //while (fighters[fighterLeft].GetHealth() > 0 && fighters[fighterRight].GetHealth() > 0)
-            while (rightFighter.GetHealth() > 0 && leftFighter.GetHealth() > 0)
+            while (rightFighter.GetHealth > 0 && leftFighter.GetHealth > 0)
             {
                 //fighters[fighterLeft].TakeDamage(fighters[fighterRight].GetDamage());
                 //fighters[fighterRight].TakeDamage(fighters[fighterLeft].GetDamage());
-                leftFighter.TakeDamage(rightFighter.GetDamage());
-                rightFighter.TakeDamage(leftFighter.GetDamage());
+                leftFighter.TakeDamage(rightFighter.GetDamage);
+                rightFighter.TakeDamage(leftFighter.GetDamage);
 
                 //fighters[fighterLeft].ShowStats();
                 //fighters[fighterRight].ShowStats();
@@ -74,13 +74,20 @@ namespace fighter
         {
             _health = health;
         }
-        public int GetHealth()
+        //public int GetHealth()
+        public int GetHealth
         {
-            return _health;
+            //return _health;
+            get {
+                return _health;
+            }
         }
-        public int GetDamage()
+        public int GetDamage
         {
-            return _damage;
+            //return _damage;
+            get {
+                return _health;
+            }
         }
 
         public void TakeDamage(int damage)
