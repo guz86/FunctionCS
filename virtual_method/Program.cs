@@ -9,4 +9,27 @@ namespace virtual_method
             
         }
     }
+
+    class NPS
+    {
+        public void ShowInfo()
+        {
+            Console.WriteLine("Я ничего не делаю.");
+        }
+    }
+
+    class Farmer : NPS
+    {
+
+    }
+
+    class Warrior : NPS
+    {
+
+    }
+
+    class Child : NPS
+    {
+
+    }
 }
