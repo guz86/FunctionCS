@@ -15,13 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "..\OOP\OOP.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cafe", "..\cafe\cafe.csproj", "{31E7AE63-224D-4A19-B735-32B0C876E7BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "has-a", "..\has-a\has-a.csproj", "{4D035E65-FA84-471C-B852-8FFED72F1291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "has-a", "..\has-a\has-a.csproj", "{4D035E65-FA84-471C-B852-8FFED72F1291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Is-a", "..\Is-a\Is-a.csproj", "{55EA1047-BE82-4D45-88EC-8E99B30AB562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Is-a", "..\Is-a\Is-a.csproj", "{55EA1047-BE82-4D45-88EC-8E99B30AB562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fighter", "..\fighter\fighter.csproj", "{B6336A54-2B35-4888-B931-63C83BE0DFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fighter", "..\fighter\fighter.csproj", "{B6336A54-2B35-4888-B931-63C83BE0DFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual_method", "..\virtual_method\virtual_method.csproj", "{AE3950F1-437D-4159-839E-3A900ED3ED9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "virtual_method", "..\virtual_method\virtual_method.csproj", "{AE3950F1-437D-4159-839E-3A900ED3ED9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface_", "..\Interface_\Interface_.csproj", "{A5343603-7039-4822-88DB-F713EA86C3B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{AE3950F1-437D-4159-839E-3A900ED3ED9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE3950F1-437D-4159-839E-3A900ED3ED9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE3950F1-437D-4159-839E-3A900ED3ED9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5343603-7039-4822-88DB-F713EA86C3B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5343603-7039-4822-88DB-F713EA86C3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5343603-7039-4822-88DB-F713EA86C3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5343603-7039-4822-88DB-F713EA86C3B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
