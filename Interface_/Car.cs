@@ -12,5 +12,9 @@ namespace Interface_
         {
             return "60 км в час";
         }
+        void IMovable.Move()
+        {
+            Console.WriteLine("Drive");
+        }
     }
 }
