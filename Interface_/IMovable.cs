@@ -8,6 +8,11 @@ namespace Interface_
 {
     interface IMovable
     {
-        void Move();
+        string GetSpeed();
+        void Move()
+        { // реализация по-умолчанию. спорно, смешиваем абстракцию и реализацию
+            Console.WriteLine("Moving");
+        }
+        
     }
 }

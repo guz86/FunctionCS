@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Interface_
 {
-    class Human : IMovable
+    interface IGainedSpeed 
     {
-        public string GetSpeed()
-        {
-            return "5 км в час";
-        }
-
+        void GainedSpeed(IMovable imovable);
     }
 }

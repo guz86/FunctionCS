@@ -8,9 +8,9 @@ namespace Interface_
 {
     class Car : IMovable
     {
-        public void Move()
+        public string GetSpeed()
         {
-            Console.WriteLine("");
+            return "60 км в час";
         }
     }
 }
