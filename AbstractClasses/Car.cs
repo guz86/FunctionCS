@@ -8,6 +8,8 @@ namespace AbstractClasses
 {
     class Car : Vehicle
     {
+        public override int Speed { get { return 60; } }
+
         public override void Move()
         {
             Console.WriteLine(" поехала");

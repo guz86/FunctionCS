@@ -8,7 +8,8 @@ namespace AbstractClasses
 {
     abstract class Vehicle
     {
-        protected float Speed;
+        //protected float Speed;
+        public abstract int Speed { get;  }
         public abstract void Move();
         public float GetCurrentSpeed()
         {
@@ -17,7 +18,7 @@ namespace AbstractClasses
 
         public void ShowInfo()
         {
-            Console.Write(GetType().Name);
+            Console.Write($"Скорость {Speed} => "+GetType().Name);
         }
 
     }
