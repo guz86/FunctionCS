@@ -17,11 +17,16 @@ namespace AbstractClasses
 
             Vehicle[] vehicles = {new Car(), new Tractor()};
 
+            Human human = new Human();
+
             foreach (var vehicle in vehicles)
             {
-                vehicle.Move();
-                Console.WriteLine(vehicle.GetCurrentSpeed());
+                //vehicle.Move();
+                //Console.WriteLine(vehicle.GetCurrentSpeed());
+                human.Move(vehicle);
             }
+
+            //human.Move(new Car());
         }
     }
 }

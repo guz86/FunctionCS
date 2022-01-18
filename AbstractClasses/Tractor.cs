@@ -10,7 +10,7 @@ namespace AbstractClasses
     {
         public override void Move()
         {
-            Console.WriteLine("Трактор едет");
+            Console.WriteLine(" едет");
         }
     }
 }

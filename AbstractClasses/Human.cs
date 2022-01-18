@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace AbstractClasses
 {
-    class Car : Vehicle
+    class Human
     {
-        public override void Move()
+        public void Move(Vehicle vehicle)
         {
-            Console.WriteLine(" поехала");
+            vehicle.ShowInfo();
+            vehicle.Move();
+            
         }
     }
 }

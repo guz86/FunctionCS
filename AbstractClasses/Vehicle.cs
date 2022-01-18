@@ -15,5 +15,10 @@ namespace AbstractClasses
             return Speed;
         }
 
+        public void ShowInfo()
+        {
+            Console.Write(GetType().Name);
+        }
+
     }
 }
