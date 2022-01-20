@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fighter", "..\fighter\fight
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "virtual_method", "..\virtual_method\virtual_method.csproj", "{AE3950F1-437D-4159-839E-3A900ED3ED9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface_", "..\Interface_\Interface_.csproj", "{A5343603-7039-4822-88DB-F713EA86C3B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interface_", "..\Interface_\Interface_.csproj", "{A5343603-7039-4822-88DB-F713EA86C3B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractClasses", "..\AbstractClasses\AbstractClasses.csproj", "{8947BC42-547A-467B-9EC1-1078E2F317EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractClasses", "..\AbstractClasses\AbstractClasses.csproj", "{8947BC42-547A-467B-9EC1-1078E2F317EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "as_is", "..\as_is\as_is.csproj", "{C226AF5A-C20D-4A83-A667-D398E12D07CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{8947BC42-547A-467B-9EC1-1078E2F317EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8947BC42-547A-467B-9EC1-1078E2F317EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8947BC42-547A-467B-9EC1-1078E2F317EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C226AF5A-C20D-4A83-A667-D398E12D07CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C226AF5A-C20D-4A83-A667-D398E12D07CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C226AF5A-C20D-4A83-A667-D398E12D07CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C226AF5A-C20D-4A83-A667-D398E12D07CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
