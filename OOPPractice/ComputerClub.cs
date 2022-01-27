@@ -8,5 +8,8 @@ namespace OOPPractice
 {
     class ComputerClub
     {
+
+        // список компьютеров
+        // очередь из школьников
     }
 }
