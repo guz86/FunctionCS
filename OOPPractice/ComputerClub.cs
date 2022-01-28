@@ -53,6 +53,15 @@ namespace OOPPractice
             }
         }
 
+        // Отнимаем у каждого Пк по минуте
+        public void SkipMunute()
+        {
+            foreach (var computer in _computers)
+            {
+                computer.SkipMinutes();
+            }
+        }
+
         // основной цикл программы
         // работаем пока есть очередь из школьников
         public void Work()
@@ -67,10 +76,41 @@ namespace OOPPractice
                 Console.WriteLine("-----------------------");
                 // список пк
                 ShowAllComputers();
+                Console.WriteLine();
+                Console.Write($"Вы предлегаете ему по под номером: ");
+                int computerNumber = Convert.ToInt32(Console.ReadLine());
+                if (computerNumber>=0 && computerNumber < _computers.Count)
+                {
+                    if (_computers[computerNumber].isBusy)
+                    {
+                        Console.WriteLine("Этот пк занят, школьник ушел");
+                    }
+                    else
+                    {
+                        if (schoolBoy.CheckSolvency(_computers[computerNumber]))
+                        {
+                            Console.WriteLine("Школьник сел за пк");
+                            // берем оплату
+                            _money += schoolBoy.ToPay();
+                            // школьник садится
+                            _computers[computerNumber].TakeThePlace(schoolBoy);
+                        }
+                        else
+                        {
+                            Console.WriteLine("У школьника не хватает денег, он ушел");
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Пк под этим номером нет");
+                }
 
                 Console.WriteLine("Для перехода к следующему посетителю нажмите любую клавишу. ");
                 Console.ReadKey();
                 Console.Clear();
+                SkipMunute();
             }
 
         }
