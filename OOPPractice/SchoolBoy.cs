@@ -15,10 +15,10 @@ namespace OOPPractice
         // сколько минут он хочет позаниматься, желаемые минуты
         public int DesiredMinutes { get; private set; }
         // конструктор?
-        public SchoolBoy(int money)
+        public SchoolBoy(int money, Random rand)
         {
             _money = money;
-            Random rand = new Random();
+            //Random rand = new Random();
             DesiredMinutes = rand.Next(10, 30);
         }
 

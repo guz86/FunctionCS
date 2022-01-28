@@ -37,7 +37,7 @@ namespace OOPPractice
             Random rand = new Random();
             for (int i = 0; i < count; i++)
             {
-                _schoolBoys.Enqueue(new SchoolBoy(rand.Next(100,250)));
+                _schoolBoys.Enqueue(new SchoolBoy(rand.Next(100,250), rand));
             }
         }
 
