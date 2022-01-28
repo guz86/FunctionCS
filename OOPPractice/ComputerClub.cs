@@ -10,7 +10,9 @@ namespace OOPPractice
     {
 
         // список компьютеров
+        private List<Computer> _computers = new List<Computer>();
         // очередь из школьников
+        private Queue<SchoolBoy> _schoolBoys = new Queue<SchoolBoy>();
 
         // у клуба должны быть деньги на счету
         // заполнить компьютерный клуб компьютерами, конструктор?
