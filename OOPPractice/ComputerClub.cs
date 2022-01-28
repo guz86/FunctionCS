@@ -27,7 +27,7 @@ namespace OOPPractice
                 _computers.Add(new Computer(rand.Next(5,15)));
             }
             // добавляем очередь школьников
-            CreateNewSchoolboy(30);
+            CreateNewSchoolboy(3);
         }
 
         // клуб будет работать пока есть очередь из школьников
@@ -78,8 +78,10 @@ namespace OOPPractice
                 ShowAllComputers();
                 Console.WriteLine();
                 Console.Write($"Вы предлегаете ему по под номером: ");
-                int computerNumber = Convert.ToInt32(Console.ReadLine());
-                if (computerNumber>=0 && computerNumber < _computers.Count)
+                //int computerNumber = Convert.ToInt32(Console.ReadLine());
+                  
+                // если удалось получить данные о номер ПК и они в нужных пределах
+                if (int.TryParse(Console.ReadLine(), out int computerNumber) && computerNumber >=0 && computerNumber < _computers.Count)
                 {
                     if (_computers[computerNumber].isBusy)
                     {
