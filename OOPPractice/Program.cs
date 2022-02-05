@@ -14,7 +14,7 @@ namespace OOPPractice
             // открываем
             computerClub.Work();
 
-
+            
 
         }
     }
