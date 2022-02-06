@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace UpcastingDowncasting
 {
@@ -6,7 +7,7 @@ namespace UpcastingDowncasting
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("test");
         }
     }
 }
