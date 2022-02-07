@@ -16,7 +16,7 @@ namespace UpcastingDowncasting
         }
         public void ShowInfo()
         {
-            Console.WriteLine("Name");
+            Console.WriteLine("Имя: "+Name);
         }
     }
 
