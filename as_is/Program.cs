@@ -6,7 +6,7 @@ namespace as_is
     {
         static void Main(string[] args)
         {
-            
+            Person person = new Person("Ivan");
         }
     }
 }

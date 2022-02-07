@@ -12,7 +12,7 @@ namespace UpcastingDowncasting
 
             Console.WriteLine(mentor1.NumberOfApprentice);
             Console.WriteLine("----");
-            // восходящее преобразование
+            // восходящее преобразование .. неявное
             // один и тот же объект в памяти
             person = mentor1;
             person.ShowInfo();
