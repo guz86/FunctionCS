@@ -44,6 +44,18 @@ namespace UpcastingDowncasting
 
             Console.WriteLine("NumberOfApprentice "+mentor.NumberOfApprentice);
 
+            Person person4 = new Mentor("Alexey", 55);
+
+            switch (person4)
+            {
+                case Mentor mentor3:
+                    Console.WriteLine($"Я ментор - {mentor3.Name}, у меня {mentor3.NumberOfApprentice} учеников");
+                    break;
+                case Apprentice apprentice1:
+                    Console.WriteLine($"Я ученик - {apprentice1.Name}");
+                    break;
+
+            }
 
         }
     }
