@@ -24,7 +24,8 @@ namespace Enum
             gameCollection.Add(new Game("Civilization", Genre.Strategy));
             gameCollection.Add(new Game("Wisp's", Genre.Action));
 
-          
+
+            gameCollection[0].Showinfo();
 
         }
     }

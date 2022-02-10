@@ -17,5 +17,10 @@ namespace Enum
             _genre = ganre;
         }
 
+        public void Showinfo()
+        {
+            Console.WriteLine($"Name Game: {_title}, Genre: {_genre}");
+        }
+
     }
 }
