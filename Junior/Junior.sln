@@ -31,9 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "as_is", "..\as_is\as_is.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOPPractice", "..\OOPPractice\OOPPractice.csproj", "{EF5399DE-F419-47E4-A7E9-C54FEE3C181E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcastingDowncasting", "..\UpcastingDowncasting\UpcastingDowncasting.csproj", "{07C8857F-7AAB-4D00-86B8-8454D2DCCFE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpcastingDowncasting", "..\UpcastingDowncasting\UpcastingDowncasting.csproj", "{07C8857F-7AAB-4D00-86B8-8454D2DCCFE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxingAndUnboxing", "..\BoxingAndUnboxing\BoxingAndUnboxing.csproj", "{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoxingAndUnboxing", "..\BoxingAndUnboxing\BoxingAndUnboxing.csproj", "{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "..\Enum\Enum.csproj", "{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
