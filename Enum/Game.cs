@@ -9,9 +9,9 @@ namespace Enum
     class Game
     {
         private string _title;
-        private string _genre;
+        private Genre _genre;
 
-        public Game(string title, string ganre)
+        public Game(string title, Genre ganre)
         {
             _title = title;
             _genre = ganre;
