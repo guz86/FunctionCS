@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpcastingDowncasting", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoxingAndUnboxing", "..\BoxingAndUnboxing\BoxingAndUnboxing.csproj", "{097B4E2E-AFF6-4ECD-8906-FE45A698BAE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "..\Enum\Enum.csproj", "{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumJ", "..\Enum\EnumJ.csproj", "{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

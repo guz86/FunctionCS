@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Enum
+namespace EnumJ
 {
     class Program
     {
