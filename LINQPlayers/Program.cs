@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LINQPlayers
 {
@@ -31,6 +32,30 @@ namespace LINQPlayers
                     playersFiltered.Add(player);
                 }
             }
+            Console.WriteLine("-----");
+            // С помощью LINQ
+
+            // возвращается последовательность IEnumerable
+            var playersFilteredLINQ = from Player player in players
+                                      where player.Level > 200
+                                      select player;
+            foreach (var player in playersFilteredLINQ)
+            {
+                Console.WriteLine(player.Login + "\t" + player.Level);
+            }
+
+            Console.WriteLine("-----");
+            // только логины
+            var playersFilteredLINQLogins = from Player player in players
+                                      where player.Level > 200
+                                      select player.Login;
+            foreach (var Login in playersFilteredLINQLogins)
+            {
+                Console.WriteLine(Login);
+            }
+
+
+
         }
     }
 }
