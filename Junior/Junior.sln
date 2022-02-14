@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoxingAndUnboxing", "..\Box
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumJ", "..\Enum\EnumJ.csproj", "{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQPlayers", "..\LINQPlayers\LINQPlayers.csproj", "{D369B119-B916-4756-AC5C-CE6C1DCAAF77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF37DD6A-25A4-4B06-B9AF-42C3F92A8893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D369B119-B916-4756-AC5C-CE6C1DCAAF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D369B119-B916-4756-AC5C-CE6C1DCAAF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D369B119-B916-4756-AC5C-CE6C1DCAAF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D369B119-B916-4756-AC5C-CE6C1DCAAF77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
