@@ -53,9 +53,26 @@ namespace LINQPlayers
             {
                 Console.WriteLine(Login);
             }
+            Console.WriteLine();
+            // методы расширения в linq
+
+            var pFilteredLINQ = players.Where(player => player.Level > 200);
+
+            foreach (var player in pFilteredLINQ)
+            {
+                Console.WriteLine(player.Login);
+            }
+
+            Console.WriteLine();
+            var pFilteredLINQLogin = players.Where(player => player.Login.ToUpper().StartsWith("P"));
+
+            foreach (var player in pFilteredLINQLogin)
+            {
+                Console.WriteLine(player.Login);
+            }
 
 
-
+            // сортировка
         }
     }
 }
