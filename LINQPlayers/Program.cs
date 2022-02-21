@@ -132,9 +132,10 @@ namespace LINQPlayers
 
             // объединение последовательностей, коллекций
             List<Player> EUplayers = new List<Player> {
-                new Player("Roy", 300),
+                new Player("ARoy", 300),
                 new Player("Ally", 200),
-                new Player("Mark", 100)
+                new Player("Mark", 100),
+                new Player("Ann", 200)
 
             };
 
@@ -144,9 +145,35 @@ namespace LINQPlayers
             {
                 Console.WriteLine(player.Login);
             }
+            Console.WriteLine();
 
 
             //Take и Skip
+            // взять и пропустить определенное количество элементов
+
+            var EUPlayerSkip = EUplayers.Skip(2); // убирается 2 элемента
+            var EUPlayerTake = EUplayers.Take(2); // берется 2 элемента
+
+            // пропускать всех кто начинается на A, с самого начала,
+            // поэтому лучше делать после предварительной сортировки
+            // в этом случае последющие начинающиеся на А остаются в списке
+            var EUPlayerSkipA = EUplayers.SkipWhile(player => player.Login.ToUpper().StartsWith("A"));
+
+            foreach (var player in EUPlayerSkipA)
+            {
+                Console.WriteLine(player.Login);
+            }
+
+            Console.WriteLine();
+
+            // пропускаем всех на А
+            var EUPlayerSortSkipA = EUplayers.OrderBy(player => player.Login)
+                .SkipWhile(player => player.Login.ToUpper().StartsWith("A"));
+            foreach (var player in EUPlayerSortSkipA)
+            {
+                Console.WriteLine(player.Login);
+            }
+
         }
     }
 }
