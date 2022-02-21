@@ -90,6 +90,41 @@ namespace LINQPlayers
             int maxNumber = numbers.Max();
             Console.WriteLine(maxNumber);
 
+
+            Console.WriteLine();
+
+
+
+            // проекции
+            // создаем объект анонимного типа
+            var newPlayers = from Player player in players
+                             select new
+                             {
+                                 //поля
+                                 Name = player.Login,
+                                 DateOfBirth = "сегодня"
+                             };
+
+            foreach (var player in newPlayers)
+            {
+                Console.WriteLine(player.Name+ "\t" + player.DateOfBirth);
+            }
+
+            Console.WriteLine();
+
+            // при помощи методов расширения
+            var newPlayersEx = players.Select(player => new
+            {
+                //поля
+                Name = player.Login,
+                DateOfBirth = "сегодня"
+            });
+
+
+            foreach (var player in newPlayersEx)
+            {
+                Console.WriteLine(player.Name + "\t" + player.DateOfBirth);
+            }
         }
     }
 }
