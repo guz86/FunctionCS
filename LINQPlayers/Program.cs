@@ -80,6 +80,16 @@ namespace LINQPlayers
                 Console.WriteLine(player.Login+"\t"+player.Level);
             }
 
+            Console.WriteLine();
+            // минимум и максимум
+            int maxLevel = players.Max(player => player.Level);
+            Console.WriteLine(maxLevel);
+
+            List<int> numbers = new List<int> { 1, 22, 33, 44, 55, 654, 2, 4 };
+            //int maxNumber = numbers.Max(number => number);
+            int maxNumber = numbers.Max();
+            Console.WriteLine(maxNumber);
+
         }
     }
 }
