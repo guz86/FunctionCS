@@ -174,6 +174,11 @@ namespace LINQPlayers
                 Console.WriteLine(player.Login);
             }
 
+
+            // Из IEnumerable в коллекцию
+
+            EUPlayerSortSkipA.ToList();
+
         }
     }
 }
