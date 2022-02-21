@@ -72,7 +72,14 @@ namespace LINQPlayers
             }
 
 
+            Console.WriteLine();
             // сортировка
+            var pFilteredLINQSort = players.Where(player => player.Level > 200).OrderBy(player => player.Level);
+            foreach (var player in pFilteredLINQSort)
+            {
+                Console.WriteLine(player.Login+"\t"+player.Level);
+            }
+
         }
     }
 }
