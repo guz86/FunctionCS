@@ -125,6 +125,28 @@ namespace LINQPlayers
             {
                 Console.WriteLine(player.Name + "\t" + player.DateOfBirth);
             }
+
+            Console.WriteLine();
+
+
+
+            // объединение последовательностей, коллекций
+            List<Player> EUplayers = new List<Player> {
+                new Player("Roy", 300),
+                new Player("Ally", 200),
+                new Player("Mark", 100)
+
+            };
+
+            var AllPlayer = players.Union(EUplayers);
+
+            foreach (var player in AllPlayer)
+            {
+                Console.WriteLine(player.Login);
+            }
+
+
+            //Take и Skip
         }
     }
 }
