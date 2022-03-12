@@ -6,9 +6,16 @@ namespace EndCourse
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Test");
-            Console.WriteLine("Test");
-            Console.WriteLine("Test");
+            
+            
+            // 6
+            string message = "";
+            for (int i = 0; i < 10; i++)
+            {
+                message += i.ToString();
+            }
+
+            Console.WriteLine(message);
         }
     }
 }
