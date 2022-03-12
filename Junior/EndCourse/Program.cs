@@ -8,6 +8,7 @@ namespace EndCourse
         {
             Console.WriteLine("Test");
             Console.WriteLine("Test");
+            Console.WriteLine("Test");
         }
     }
 }
