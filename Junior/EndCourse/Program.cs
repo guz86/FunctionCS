@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace EndCourse
 {
@@ -56,18 +57,59 @@ namespace EndCourse
 
             
             //// 2 Интернирование строк
+            // строка ссылочный тип, но не изменяемый
+            // Object.Equals - переопределен на посимвольное сравнение в строках
+            // Object.ReferenceEquals - сравнивает ссылки
             
+            // 1
+            string messageHello = "hello hello hello";
+            for (int i = 0; i < messageHello.Length; i++)
+            {
+                Thread.Sleep(100);
+                Console.Write(messageHello[i]);
+            }
+            Console.WriteLine();
             
-
+            // 2 messageHello[0] = 's'; - нельзя менять символ, из-за оптимизации по тексту
+            
+            // 3
+            messageHello = messageHello.ToUpper(); // метод возвращает измененую копию строки
+            Console.WriteLine(messageHello);
+            
+            // 4 
+            string str1 = "Hello";
+            string str2 = "He"+"llo";
+            string str3 = string.Format("{0}{1}","He","llo"); // по-символьно та же строка, новая строка в куче
+            Console.WriteLine(str1+str2+str3);
+            Console.WriteLine("str1 str2 " + Object.ReferenceEquals(str1,str2)); // str1 str2 True
+            Console.WriteLine("str1 str3 " + Object.ReferenceEquals(str1,str3)); // str1 str3 False
+            Console.WriteLine("str2 str3 " + Object.ReferenceEquals(str2,str3)); // str2 str3 False
+            
+            // 5
+            // сравнение посимвольно
+            Console.WriteLine("str1 str2 " + Object.Equals(str1,str2)); // str1 str2 True
+            Console.WriteLine("str1 str3 " + Object.Equals(str1,str3)); // str1 str3 True
+            Console.WriteLine("str2 str3 " + Object.Equals(str2,str3)); // str2 str3 True
+            
+            // сравнение строк без учета регистра идет быстрее
+            
+            // сравнение посимвольно
+            Console.WriteLine("str1 str2 " + (str1 == str2)); // str1 str2 True
+            Console.WriteLine("str1 str3 " + (str1 == str3)); // str1 str3 True
+            Console.WriteLine("str2 str3 " + (str2 == str3)); // str2 str3 True
 
             // 6
             string message = "";
             for (int i = 0; i < 10; i++)
             {
-                message += i.ToString();
+                message += i.ToString(); //каждый раз создается копия строки при конкатенации,  i.ToString тоже создаст копию строки
             }
-
             Console.WriteLine(message);
+            // проблема решается классом  StringBuilder
+            
+            // 7 
+            
+            
     
         }
         // 1 / 2
