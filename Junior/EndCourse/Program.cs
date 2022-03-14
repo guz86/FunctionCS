@@ -102,16 +102,33 @@ namespace EndCourse
             string message = "";
             for (int i = 0; i < 10; i++)
             {
-                message += i.ToString(); //каждый раз создается копия строки при конкатенации,  i.ToString тоже создаст копию строки
+                message += i.ToString(); //каждый раз создается копия строки при конкатенации,
+                                         //i.ToString тоже создаст копию строки
             }
             Console.WriteLine(message);
             // проблема решается классом  StringBuilder
             
             // 7 
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(Decorate("Hello","b")); 
+            }
             
+            //// 3 Статика
             
-    
+            // 1
+            Console.WriteLine("Hi");
+            SomeClass someClass = new SomeClass();
+            Console.WriteLine(SomeClass.StaticField);
+            // Hi
+            // Static ctor
+            // ctor
+            // 10
+
         }
+
+        #region 1
+
         // 1 / 2
         static void Sum(int value1, int value2, int value3)
         {
@@ -140,6 +157,39 @@ namespace EndCourse
         {
             array = new int[5];
             array[0] = 88;
+        }
+        #endregion
+        
+        #region 2
+
+        // 2 / 7
+        private static string Decorate(string text, string tag)
+        {
+            // return $"<{tag}>{text}</{tag}>"; // все созданные объекты ссылаются
+            // на разные участки в памяти(разные экземпляры) return $"<{tag}>{text}</{tag}>";
+            return string.Intern($"<{tag}>{text}</{tag}>"); // при дублировании возвращается ссылка из пула, либо в пул добавляется новая строчка, если она отличается
+        }
+
+        #endregion
+        
+
+    }
+
+    // 3 / 1
+    class SomeClass
+    {
+        public static float StaticField;
+
+        static SomeClass()
+        {
+            StaticField = 10;
+            Console.WriteLine("Static ctor");
+        }
+
+        public SomeClass()
+        {
+            Console.WriteLine("ctor");
+            
         }
     }
 }
