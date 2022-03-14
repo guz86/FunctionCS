@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -9,6 +10,11 @@ namespace EndCourse
     {
         public static void Main(string[] args)
         {
+
+            #region First
+
+            
+
             //// 1 Value Types and Reference Types
             
             //Value Types (в куче) в стеке  - при передаче передается копия значения переменной
@@ -125,6 +131,75 @@ namespace EndCourse
             // ctor
             // 10
 
+            #endregion
+            
+            //// ООП, если есть класс с которого мы можем создать объект в котором заключено
+            // состояние и методы с которыми мы можем взаимодействовать
+            // Абстракция - отделение несущественного от существенного(абстрагируемся от конкретики в сущностях, обобщение)
+            // Инкапсуляция - некое поле(данные) и некий метод(операции) заключены в объекте, и защищаем данный объект
+            // от не правильного использования (про сокрытие)
+            // Наследование - борьба с дублирующимся кодом в классах, общий случай и уточнения (любая кошка животное,
+            // но не любое животное кошка, но некоторые животные это кошки, у них усы)
+            // Полиморфизм - (полиморфизм подтипов) Один интерфейс, множество реализаций
+            // для ООП нужен класс, объект: конструктор, с полями(свойствами) и методами
+
+            // 1
+            
+            string trader1 = "Trader1";
+            string trader2 = "Trader2";
+            string[] goods1 = {"Board", "Pensil", "Paper"};
+            string[] goods2 = {"Skate", "Helmet", "Shirt"};
+            
+            Console.WriteLine($"{trader1}:");
+            foreach (var good in goods1)
+            {
+                Console.Write($"{good} ");
+            }
+            
+            Console.WriteLine($"\n{trader2}:");
+            foreach (var good in goods2)
+            {
+                Console.Write($"{good} ");
+            }
+
+            Console.WriteLine();
+            // проблемы с добавлением следущего торговца, дублирование кода
+            
+            // 2
+            
+            // упрощаем, для добавления нового traider добавляем в массивы его и список его товаров
+            string[] traders = {"Trader1", "Trader2"};
+            string[][] goods =
+            {
+                new string[]
+                {
+                    "Board",
+                    "Pensil",
+                    "Paper"
+                },
+                new string[]
+                {
+                    "Skate",
+                    "Helmet",
+                    "Shirt"
+                }
+            };
+
+            for (int i = 0; i < traders.Length; i++)
+            {
+                Console.WriteLine($"\n{traders[i]}:");
+                foreach (var good in goods[i])
+                {
+                    Console.Write($"{good} ");
+                }
+            }
+            
+            // не контролируем целостность, можем добавить торговца но не добавить список его товаров
+            // не выделены сущности торговец и его товары
+            
+            // 3
+            
+
         }
 
         #region 1
@@ -159,7 +234,6 @@ namespace EndCourse
             array[0] = 88;
         }
         #endregion
-        
         #region 2
 
         // 2 / 7
@@ -171,9 +245,8 @@ namespace EndCourse
         }
 
         #endregion
-        
-
     }
+    #region 3
 
     // 3 / 1
     class SomeClass
@@ -192,4 +265,6 @@ namespace EndCourse
             
         }
     }
+    
+    #endregion
 }
