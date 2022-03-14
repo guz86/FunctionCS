@@ -233,6 +233,25 @@ namespace EndCourse
             
             // без доп валидации
 
+             
+            
+            
+            //задача посчитать разность всех элементов через while
+            /*List<int> list = new List<int>(){1, 2, 3, 100};
+            
+            int iter = 1;
+            int result = list[0];
+            
+            while (iter < list.Count)
+            {
+                result -= list[iter];
+                iter++;
+            }
+
+            Console.WriteLine(result);*/
+
+
+
         }
 
         #region 1
@@ -278,6 +297,27 @@ namespace EndCourse
         }
 
         #endregion
+        
+        // Избавляемся от If и Switch
+    
+        public static void Attack(int attackType)
+        {
+            if (attackType == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Attack 0");
+            }
+            else if (attackType == 1)
+            {
+                Console.ForegroundColor  = ConsoleColor.Green;
+                Console.WriteLine("Attack 1");
+            }
+            else if (attackType == 2)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Attack 2");
+            }
+        }
     }
     #region 3
 
