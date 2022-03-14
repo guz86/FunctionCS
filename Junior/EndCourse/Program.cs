@@ -196,9 +196,42 @@ namespace EndCourse
             
             // не контролируем целостность, можем добавить торговца но не добавить список его товаров
             // не выделены сущности торговец и его товары
+            Console.WriteLine();
             
             // 3
+            // выделяем отдельный класс Trader
+            Trader[] myTraders =
+            {
+                new Trader(
+                    "Traider1",
+                    new string[]
+                    {
+                        "Board",
+                        "Pensil",
+                        "Paper"
+                    }
+                ),
+                new Trader(
+                    "Traider2",
+                    new string[]
+                    {
+                        "Skate",
+                        "Helmet",
+                        "Shirt"
+                    }
+                )
+            };
+
+            foreach (var trader in myTraders)
+            {
+                Console.WriteLine($"\n{trader.Name}:");
+                foreach (var good in trader.Goods)
+                {
+                    Console.Write($"{good} ");
+                }
+            }
             
+            // без доп валидации
 
         }
 
