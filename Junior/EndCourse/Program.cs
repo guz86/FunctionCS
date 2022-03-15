@@ -367,27 +367,46 @@ namespace EndCourse
         }
         
         // не избавились от условной логики
-        
-        public static void AttackB(int attackType)
+
+        public static Item [] items =
         {
-            if (attackType == 0)
-            {
-                ShowInfoAttackB("Attack 0", ConsoleColor.Blue);
-            }
-            else if (attackType == 1)
-            {
-                ShowInfoAttackB("Attack 1", ConsoleColor.Green);
-            }
-            else if (attackType == 2)
-            {
-                ShowInfoAttackB("Attack 2", ConsoleColor.Red);
-            }
+            new Item("Attack 0", ConsoleColor.Blue),
+            new Item("Attack 1", ConsoleColor.Green),
+            new Item("Attack 2", ConsoleColor.Red),
+        };
+        
+        
+        public static void AttackB(int itemId)
+        {
+            
+            //items[itemId].ShowInfoAttackB();
+            ShowInfoAttackB(items[itemId].Description,items[itemId].Color);
         }
 
         private static void ShowInfoAttackB( string description, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(description);
+        }
+ 
+
+        public class Item
+        {
+            public string Description;
+            public ConsoleColor Color;
+            
+            public Item(string description, ConsoleColor color)
+            {
+                Color = color;
+                Description = description;
+            }
+            
+            // public void ShowInfoAttackB()
+            // {
+            //     Console.ForegroundColor = Color;
+            //     Console.WriteLine(Description);
+            // }
+            //
         }
         
     }
