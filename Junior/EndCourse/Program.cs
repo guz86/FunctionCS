@@ -297,6 +297,9 @@ namespace EndCourse
         }
 
         #endregion
+
+        #region If и Switch
+
         
         // Избавляемся от If и Switch
     
@@ -407,6 +410,59 @@ namespace EndCourse
             //     Console.WriteLine(Description);
             // }
             //
+        }
+        
+        #endregion
+        
+        ////  инкапсуляция
+        // 1
+        class Timer
+        {
+            public int Start;
+            public int End;
+            
+            public Timer(int start, int end)
+            {
+                Start = start;
+                End = end;
+            }
+        }
+        
+        // можем изменять поля как угодно
+        // 1-3
+        class Timer2
+        {
+            private int _start;
+            private int _end;
+            
+            public Timer2(int start, int end)
+            {
+                _start = start;
+                _end = end;
+            }
+
+            public void SetStart(int start)
+            {
+                if (start > _end) throw new ArgumentException("start");
+                _start = start;
+            }
+
+            public int GetStart()
+            {
+                return _start;
+            }
+            
+            public void SetEnd(int end)
+            {
+                if (end < _start) throw new ArgumentException("end");
+                _end = end;
+            }
+
+            public int GetEnd()
+            {
+                return _end;
+            }
+            
         }
         
     }
