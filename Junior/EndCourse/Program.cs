@@ -318,6 +318,78 @@ namespace EndCourse
                 Console.WriteLine("Attack 2");
             }
         }
+        
+        // или
+        public static void Attack2(int attackType)
+        {
+            switch (@attackType)
+            {
+                case 0:
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Attack 0");
+                    break;
+                case 1:
+                    Console.ForegroundColor  = ConsoleColor.Green;
+                    Console.WriteLine("Attack 1");
+                    break;
+                case 2:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Attack 2");
+                    break;
+            }
+        }
+        
+        // дублирование кода
+        // при изменении формата вывода, придется менять его в каждом case
+        
+        // рефакторинг, извлечение метода
+        
+        public static void AttackA(int attackType)
+        {
+            if (attackType == 0)
+            {
+                ShowInfoAttack("Attack 0", ConsoleColor.Blue);
+            }
+            else if (attackType == 1)
+            {
+                ShowInfoAttack("Attack 1", ConsoleColor.Green);
+            }
+            else if (attackType == 2)
+            {
+                ShowInfoAttack("Attack 2", ConsoleColor.Red);
+            }
+        }
+
+        private static void ShowInfoAttack( string description, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(description);
+        }
+        
+        // не избавились от условной логики
+        
+        public static void AttackB(int attackType)
+        {
+            if (attackType == 0)
+            {
+                ShowInfoAttackB("Attack 0", ConsoleColor.Blue);
+            }
+            else if (attackType == 1)
+            {
+                ShowInfoAttackB("Attack 1", ConsoleColor.Green);
+            }
+            else if (attackType == 2)
+            {
+                ShowInfoAttackB("Attack 2", ConsoleColor.Red);
+            }
+        }
+
+        private static void ShowInfoAttackB( string description, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(description);
+        }
+        
     }
     #region 3
 
