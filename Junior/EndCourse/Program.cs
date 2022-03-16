@@ -249,8 +249,15 @@ namespace EndCourse
             }
 
             Console.WriteLine(result);*/
-
-
+            Console.WriteLine();
+            
+        // InSequence
+        IntSequence sequence = new IntSequence(1,2,3,4,5,6,7,8,9);
+        sequence.Index = -1;
+        while (sequence.Next())
+        {
+            Console.Write(sequence.Array[sequence.Index]);
+        }
 
         }
 
@@ -430,6 +437,9 @@ namespace EndCourse
         
         // можем изменять поля как угодно
         // 1-3
+
+        #region Timer
+
         class Timer2
         {
             private int _start;
@@ -443,6 +453,7 @@ namespace EndCourse
 
             public void SetStart(int start)
             {
+                // защищаем
                 if (start > _end) throw new ArgumentException("start");
                 _start = start;
             }
@@ -465,6 +476,33 @@ namespace EndCourse
             
         }
         
+        #endregion
+        
+        // где нарушается инкапсуляция
+        // IntSequence
+        class IntSequence
+        {
+            public int Index;
+            public int[] Array;
+            
+            public IntSequence(params int[] array)
+            {
+                Array = array;
+            }
+
+            public bool Next()
+            {
+                Index++;
+                if (Index >=Array.Length)
+                {
+                    Index = 0;
+                    return false;
+                }
+                return true;
+            }
+            
+            
+        }
     }
     #region 3
 
