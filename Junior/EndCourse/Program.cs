@@ -259,7 +259,20 @@ namespace EndCourse
             Console.Write(sequence.Array[sequence.Index]);
         }
 
+        Console.WriteLine();
+        
+        IntSequence2 sequence2 = new IntSequence2(1,2,3,4,5,6,7,8,9);
+        //sequence2.Index = -1; // выносим операцию в метод
+        sequence2.Reset();
+        while (sequence2.Next())
+        {
+            //Console.Write(sequence2.Array[sequence2.Index]); // возвращаем текущий элемент  последовательности в методе
+            Console.Write(sequence2.CurrentValue());
         }
+        
+        
+        }
+    
 
         #region 1
 
@@ -500,10 +513,42 @@ namespace EndCourse
                 }
                 return true;
             }
-            
-            
         }
-    }
+        
+        // 
+        class IntSequence2
+        {
+            private int Index;
+            private int[] Array;
+            
+            public IntSequence2(params int[] array)
+            {
+                Array = array;
+            }
+
+            public void Reset()
+            {
+                Index = -1;
+            }
+
+            public int CurrentValue()
+            {
+                return Array[Index];
+            }
+
+            
+            public bool Next()
+            {
+                Index++;
+                if (Index >=Array.Length)
+                {
+                    Index = 0;
+                    return false;
+                }
+                return true;
+            }
+        }
+    
     #region 3
 
     // 3 / 1
@@ -525,4 +570,5 @@ namespace EndCourse
     }
     
     #endregion
+}
 }
