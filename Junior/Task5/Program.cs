@@ -2,6 +2,12 @@
 {
     class Task5
     {
+        public static void KeyClear()
+        {
+            Console.ReadKey();
+            Console.Clear();
+        }
+
         static void Main(string[] args)
         {
             // Консольное меню
@@ -15,23 +21,21 @@
             // Esc – выход из программы.
             // Программа не должна завершаться после ввода, пользователь сам должен выйти из программы при помощи команды.
 
-
             // console_ver1
-            
-            int inputMenu;
+
+            //int inputMenu;
             string name = "";
             string password = "";
-            int windowSizeWidth;
-            int windowSizeHeight;
 
-            windowSizeWidth = 180;
-            windowSizeHeight = 30;
+            // windowSizeWidth = 180;
+            // windowSizeHeight = 30;
 
             while (true)
             {
-                Console.WriteLine("SetName(1)|ChangeConsoleColor(2)|SetPass(3)|WriteName(4)|WindowSize(5)|Title(6)|whatWinSize(7)|Beep(8)|RColor(9)|Exit(10)");
-                inputMenu = Convert.ToInt32(Console.ReadLine());
-
+                Console.WriteLine(
+                    "SetName(1)|ChangeConsoleColor(2)|SetPass(3)|WriteName(4)|WindowSize(5)|Title(6)|whatWinSize(7)|Beep(8)|RColor(9)|Exit(10)");
+                //inputMenu = Convert.ToInt32(Console.ReadLine());
+                int.TryParse(Console.ReadLine(), out int inputMenu);
 
                 switch (inputMenu)
                 {
@@ -39,82 +43,74 @@
                         Console.Write("Введите имя: ");
                         name = Console.ReadLine();
                         Console.WriteLine("Имя задано, нажмите любую клавишу..");
-                        Console.ReadKey();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 2:
-                        Console.BackgroundColor = ConsoleColor.DarkBlue;
+                        Console.BackgroundColor = ConsoleColor.Magenta;
                         Console.WriteLine("Цвет фона изменен, нажмите любую клавишу..");
-                        Console.ReadKey();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 3:
                         Console.Write("Установите пароль: ");
                         password = Console.ReadLine();
                         Console.WriteLine("Пароль задан, нажмите любую клавишу..");
-                        Console.ReadKey();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 4:
                         Console.Write("Введите пароль: ");
                         if (Console.ReadLine() == password)
                         {
                             Console.WriteLine("Добро пожаловать, " + name + " Нажмите любую клавишу");
-                            Console.ReadKey();
                         }
-                        Console.Clear();
+
+                        KeyClear();
                         break;
                     case 5:
-                        // Console.WindowWidth = 50;
-                        // Console.WindowHeight = 30;
                         Console.Write("Введите ширину окна, например 120: ");
-                        windowSizeWidth = Convert.ToInt32(Console.ReadLine());
+                        //windowSizeWidth = Convert.ToInt32(Console.ReadLine());
+                        bool SizeWidthExist = int.TryParse(Console.ReadLine(), out int windowSizeWidth);
                         Console.Write("Введите высоту окна, например 30: ");
-                        windowSizeHeight = Convert.ToInt32(Console.ReadLine());
+                        bool SizeHeightExist = int.TryParse(Console.ReadLine(), out int windowSizeHeight);
 
-                        Console.Clear();
-                        Console.WindowWidth = windowSizeWidth;
-                        Console.WindowHeight = windowSizeHeight;
+                        if (SizeWidthExist && SizeHeightExist)
+                        {
+                            Console.WindowWidth = windowSizeWidth;
+                            Console.WindowHeight = windowSizeHeight;
+                        }
+                        KeyClear();
                         break;
                     case 6:
                         Console.Write("Задайте название для окна: ");
                         Console.Title = Console.ReadLine();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 7:
-                        Console.WriteLine("Текущие размеры окна: "+Console.WindowHeight+ " на "+ Console.WindowWidth);
-                        Console.ReadKey();
-                        Console.Clear();
+                        Console.WriteLine(
+                            "Текущие размеры окна: " + Console.WindowHeight + " на " + Console.WindowWidth);
+                        KeyClear();
                         break;
                     case 8:
                         Console.Beep();
-                        Console.ReadKey();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 9:
                         Console.ResetColor();
-                        Console.Clear();
+                        KeyClear();
                         break;
                     case 10:
-                        Console.Clear();
+                        KeyClear();
                         break;
                     default:
                         Console.WriteLine("Не верная команда");
-                        Console.Clear();
+                        KeyClear();
                         break;
                 }
+
                 if (inputMenu == 10)
                 {
                     break;
                 }
-
             }
-
-            
-            
-
         }
     }
-
-
 }
