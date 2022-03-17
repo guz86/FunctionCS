@@ -20,28 +20,29 @@
             // string someString = “Hello”;
             // Console.WriteLine(someString.Length); //5
 
-            string name;
-            char symbol;
+            Console.Write("Введите имя:\t");
+            string name = Console.ReadLine();
+            bool emptyName = (name == "");
+            if (emptyName) Console.WriteLine("Вы не ввели Имя");
 
-            Console.Write("Введите имя:");
-            name = Console.ReadLine();
-            Console.WriteLine("Введите символ:  ");
-            symbol = Convert.ToChar(Console.ReadLine());
+            Console.Write("Введите символ:\t");
+            bool sucсessChar = char.TryParse(Console.ReadLine(), out char symbol);
 
-
-            for (int i = 0; i < name.Length + 4; i++)
+            if (!emptyName && sucсessChar)
             {
-                Console.Write(symbol);
+                for (int i = 0; i < name.Length + 4; i++)
+                {
+                    Console.Write(symbol);
+                }
+
+                //Console.Write("\n" + symbol + " " + name + " " + symbol + "\n");
+                Console.Write($"\n{symbol} {name} {symbol}\n");
+
+                for (int i = 0; i < name.Length + 4; i++)
+                {
+                    Console.Write(symbol);
+                }
             }
-
-            Console.Write("\n" + symbol + " " + name + " " + symbol + "\n");
-
-            for (int i = 0; i < name.Length + 4; i++)
-            {
-                Console.Write(symbol);
-            }
-
-            Console.Write("\n");
         }
     }
 }
