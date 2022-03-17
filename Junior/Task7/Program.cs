@@ -13,7 +13,7 @@ class Program
 
             // PasswordCheck_v1
             
-            int i = 0;
+            /*int i = 0;
             string password = "666";
             Console.WriteLine("Доступ закрыт!");
             while (true)
@@ -36,7 +36,7 @@ class Program
                     break;
                 }
 
-            }
+            }*/
             
 
             // PasswordCheck_v2
@@ -59,5 +59,22 @@ class Program
                 }
             }
             */
+            
+            // PasswordCheck_v3
+            string password = "666";
+            Console.WriteLine("Доступ закрыт!");
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Введите пароль:");
+
+                if (password.Equals(Console.ReadLine())) 
+                {
+                    Console.WriteLine("Секретное сообщение: И приснился мне, город с " +
+                                      "незнакомыми людьми, вышли все под дождь...");
+                    break; 
+                }
+                Console.WriteLine("Не верный пароль");
+            }
     }
 }
