@@ -49,14 +49,29 @@ namespace Task8
             int iFive = 0;
 
             Console.WriteLine("Вы вышли на бой с Боссом!");
-            Console.WriteLine("Health Boss: " + bossHealth + ", Damage: " + bossDamage + " | Your Health: " + playerHealth);
-            // Console.WriteLine("Сила заклинаний: \nРашамон " + spellOne + ", \nХуганзакура "
-            //   + spellTwo + ", \nРазлом " + spellThree + ", \nАвертула " + spellFour + "-" + spellFourEnd + ", " + "\nКарабанжа " + spellFive);
 
             while (bossHealth > 0 && playerHealth > 0)
             {
+                Console.WriteLine("Health Boss: " + bossHealth + ", Damage: " + bossDamage + " | Your Health: "
+                                  + playerHealth);
+                Console.WriteLine();
+                Console.WriteLine(" ------- Ваши заклинания: -------- ");
+                Console.WriteLine("Рашамон - призывает теневого духа для нанесения атаки -50хп игроку");
+                Console.WriteLine("> Хугунзакура - 100 урона от теневого духа, только " +
+                                  "если теневой дух вызван.");
+                Console.WriteLine("> Разлом - скрыться и восстановить 250 хп, урона от " +
+                                  "босса нет, нельзя использовать 2 раза подряд");
+                Console.WriteLine("> Авертула - высасывать душу из босса, разово снимет " +
+                                  "60хп и пополнит их герою дополнительно будет отниматься следующие 2 атаки по 30 хп. " +
+                                  "> Можно выполнить если нет теневого духа.");
+                Console.WriteLine("> Карабаранжа - отразить удар босса, хп не снимется, " +
+                                  "но следующая атака босса будет на 50% ниже по урону. выполняется " +
+                                  "если босс не под проклятием. ");
+                
+                
                 Console.WriteLine("\n* * * * * * * * * ");
-                Console.Write(" >> Выбери номер заклинания - Рашамон(1), Хуганзакура(2), Разлом(3), Авертула(4), Карабаранжа(5): ");
+                Console.Write(" >> Выбери номер заклинания - Рашамон(1), Хуганзакура(2), Разлом(3), " +
+                              "Авертула(4), Карабаранжа(5): ");
                 spell = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("* * * * * * * * * \n");
@@ -70,7 +85,8 @@ namespace Task8
                             Console.WriteLine("Рамашон...");
                             Thread.Sleep(700);
                         }
-                        Console.WriteLine("Вызывается теневой дух, который может нанести сильный урон, " + spellOne + " HP отнимается у Вас!");
+                        Console.WriteLine("Вызывается теневой дух, который может нанести сильный урон, "
+                                          + spellOne + " HP отнимается у Вас!");
 
                         playerHealth -= spellOne;
                         spirit = true;
@@ -117,7 +133,8 @@ namespace Task8
                             Console.WriteLine("Нельзя использовать Разлом 2 раза подряд!");
                             break;
                         }
-                    // Авертула - высасывать душу из босса, разово снимет 60хп и пополнит их герою дополнительно будет отниматься следующие 2 атаки по 30 хп. Можно выполнить если нет теневого духа.
+                    // Авертула - высасывать душу из босса, разово снимет 60хп и пополнит их герою
+                    // дополнительно будет отниматься следующие 2 атаки по 30 хп. Можно выполнить если нет теневого духа.
                     case 4:
                         for (int i = 0; i < 3; i++)
                         {
@@ -134,7 +151,8 @@ namespace Task8
                         break;
 
 
-                    // Карабаранжа - отразить удар босса, хп не снимется, но следующая атака босса будет на 50% ниже по урону. выполняется если босс не под проклятием. 
+                    // Карабаранжа - отразить удар босса, хп не снимется, но следующая атака босса
+                    // будет на 50% ниже по урону. выполняется если босс не под проклятием. 
                     case 5:
 
                         if (sucksSpellFour == false)
@@ -144,7 +162,8 @@ namespace Task8
                                 Console.WriteLine("Карабаранжа...");
                                 Thread.Sleep(700);
                             }
-                            Console.WriteLine("Вы отражаете удар Босса, его мораль понижена, следующая атака в 2 раза ниже.");
+                            Console.WriteLine("Вы отражаете удар Босса, его мораль понижена, " +
+                                              "следующая атака в 2 раза ниже.");
                             spellFive = 0;
                             attackspellFive = true;
                         }
@@ -168,7 +187,8 @@ namespace Task8
                         bossHealth -= spellFourEnd;
 
                         playerHealth += spellFour;
-                        Console.WriteLine("При высасывании души босс дополнительно теряет, а Вы получаете " + spellFourEnd + " HP");
+                        Console.WriteLine("При высасывании души босс дополнительно теряет, а Вы получаете "
+                                          + spellFourEnd + " HP");
                     }
                     iFour += 1;
 
@@ -215,6 +235,11 @@ namespace Task8
                 Thread.Sleep(1500);
                 Console.WriteLine("\nHealth Boss: " + bossHealth + " | Your Health: " + playerHealth + "\n");
 
+                //
+                Console.WriteLine("Нажмите любую клавишу чтобы продолжить!");
+                Console.ReadKey();
+                Console.Clear();
+                
             }
             Thread.Sleep(1500);
             if (bossHealth <= 0 && playerHealth <= 0)
