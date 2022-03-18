@@ -47,8 +47,8 @@
             {
                 if (myArray[i] > myArray[i-1] && myArray[i] > myArray[i+1]) Console.Write(myArray[i] + " ");
             }
-            if (myArray[myArray.Length - 1] > myArray[myArray.Length - 2]) 
-                Console.Write(myArray[myArray.Length - 1] + " ");
+            if (myArray[^1] > myArray[^2]) 
+                Console.Write(myArray[^1] + " ");
             
             
         }
