@@ -19,7 +19,11 @@
                 {3, 33, 425, 223, 543, 25523, 123, 123, 421, 1234},
                 {3, 33, 425, 223, 543, 223, 123, 123, 421, 1234},
             };
-            int maxElement = int.MinValue;
+            
+                // это если один максимальный элемент в матрице
+                // если их несколько то без привязки к j,k по занчению maxElement
+
+                int maxElement = int.MinValue;
             int i = 0, jdMaxElement = 0, kdMaxElement = 0;
 
             for (int j = 0; j < myArray.GetLength(0); j++)
