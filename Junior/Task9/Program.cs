@@ -13,19 +13,19 @@
             {
                 {1, 2, 3}, 
                 {3, 2, 2},
-                {2, 3, 3}
+                {2, 9, 3}
             };
-            int sumTwoStringArray = 0;
-            int multiplyOneStringArray = 1;
-            for (int j = 0; j < myArray.GetLength(1); j++)
+            int sumSecondStringArray = 0;
+            int multiplyFirstСolumnArray = 1;
+            for (int i = 0; i < myArray.GetLength(1); i++)
             {
-                sumTwoStringArray += myArray[1, j];
+                sumSecondStringArray += myArray[1, i];
             }
             
-            for (int j = 0; j < myArray.GetLength(1); j++)
+            for (int i = 0; i < myArray.GetLength(0); i++)
             {
                 
-                multiplyOneStringArray *= myArray[0, j];
+                multiplyFirstСolumnArray *= myArray[i, 0];
             }
 
             for (int i = 0; i < myArray.GetLength(0); i++)
@@ -38,8 +38,9 @@
                 Console.WriteLine();
             }
             
-            Console.WriteLine($"sumTwoStringArray = {sumTwoStringArray}");
-            Console.WriteLine($"multiplyOneStringArray = {multiplyOneStringArray}");
+            Console.WriteLine($"sumSecondStringArray = {sumSecondStringArray}");
+            Console.WriteLine($"multiplyFirstСolumnArray = {multiplyFirstСolumnArray}");
+            
         }
     }
 }
