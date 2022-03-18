@@ -11,12 +11,35 @@
             //      Вывести исходную матрицу и результаты вычислений.
             int[,] myArray =
             {
-                {1, 3, 4, 5, 6, 7}, 
-                {1, 3, 4, 5, 6, 7},
-                {1, 3, 4, 5, 6, 7}
+                {1, 2, 3}, 
+                {3, 2, 2},
+                {2, 3, 3}
             };
+            int sumTwoStringArray = 0;
+            int multiplyOneStringArray = 1;
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                sumTwoStringArray += myArray[1, j];
+            }
+            
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                
+                multiplyOneStringArray *= myArray[0, j];
+            }
 
+            for (int i = 0; i < myArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < myArray.GetLength(1); j++)
+                {
+                    Console.Write(myArray[i, j]+" ");
+                }
 
+                Console.WriteLine();
+            }
+            
+            Console.WriteLine($"sumTwoStringArray = {sumTwoStringArray}");
+            Console.WriteLine($"multiplyOneStringArray = {multiplyOneStringArray}");
         }
     }
 }
