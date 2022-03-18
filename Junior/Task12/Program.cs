@@ -10,12 +10,11 @@
             //     Выход из программы должен происходить только в том случае, если пользователь введет команду exit.
             //     Программа должна работать на основе расширения массива.
             //     Внимание, нельзя использовать List<T> и Array.Resize
-            // ver1
+            // ver2
             bool exit = true;
             string input;
-            int i = 0;
             int sum = 0;
-            int[] myArray = new int[1];
+            int[] myArray = new int[0];
 
             while (exit)
             {
@@ -36,7 +35,7 @@
 
                 if (int.TryParse(input, out int number))
                 {
-                    int[] myArrayTemp = new int[i + 1];
+                    int[] myArrayTemp = new int[myArray.Length + 1];
                     for (int j = 0; j < myArray.Length; j++)
                     {
                         myArrayTemp[j] = myArray[j];
@@ -45,9 +44,6 @@
                     myArrayTemp[^1] = number;
                     myArray = myArrayTemp;
                 }
-            
-                i++;
-                
             }
         }
     }
