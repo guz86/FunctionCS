@@ -1,4 +1,4 @@
-﻿namespace Task9
+﻿namespace Task11
 {
     class Program
     {
@@ -40,6 +40,17 @@
                 }
             }
 
+            Console.WriteLine();
+            // ver2
+            if (myArray[0] > myArray[1]) Console.Write(myArray[0] + " ");
+            for (int i = 1; i < myArray.Length - 1; i++)
+            {
+                if (myArray[i] > myArray[i-1] && myArray[i] > myArray[i+1]) Console.Write(myArray[i] + " ");
+            }
+            if (myArray[myArray.Length - 1] > myArray[myArray.Length - 2]) 
+                Console.Write(myArray[myArray.Length - 1] + " ");
+            
+            
         }
 
     }
