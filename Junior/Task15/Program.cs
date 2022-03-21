@@ -11,6 +11,7 @@
             //Draw(40, ConsoleColor.Green);
             Draw2(30, ConsoleColor.Red);
         }
+
         //ver1
         static void Draw(int position, ConsoleColor color)
         {
@@ -21,13 +22,16 @@
             {
                 Console.Write("#");
             }
+
             Console.BackgroundColor = defaultColor;
             for (int i = position / 10; i < (100 / 10); i++)
             {
                 Console.Write("_");
             }
+
             Console.Write("]");
         }
+
         //ver2
         static void Draw2(int position, ConsoleColor color)
         {
@@ -39,6 +43,7 @@
             {
                 bar += "#";
             }
+
             Console.Write(bar);
             Console.BackgroundColor = defaultColor;
             bar = "";
@@ -46,6 +51,7 @@
             {
                 bar += "_";
             }
+
             Console.Write(bar + "]");
         }
     }

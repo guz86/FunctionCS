@@ -14,7 +14,22 @@
             //     P.S Задача решается с помощью циклов
             // P.S Также в TryParse используется модификатор параметра out
 
+            EnterDigit();
         }
 
+        //ver1
+        static void EnterDigit()
+        {
+            bool parse = false;
+            while (!parse)
+            {
+                Console.Write("Введите число\t");
+                parse = int.TryParse(Console.ReadLine(), out int enter);
+                if (parse)
+                {
+                    Console.WriteLine(enter);
+                }
+            }
+        }
     }
 }
