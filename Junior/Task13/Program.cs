@@ -1,6 +1,4 @@
-﻿using System.Threading.Channels;
-
-namespace Task13
+﻿namespace Task13
 {
     class Program
     {
@@ -43,7 +41,6 @@ namespace Task13
                         break;
                     case 3:
                         DeleteFile(ref FIO, ref job);
-                        ;
                         break;
                     case 4:
                         FindFile(FIO, job);
