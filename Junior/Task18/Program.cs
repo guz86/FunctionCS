@@ -21,16 +21,18 @@
 
                 Console.Write("Введите слово(бабенка, багаж, багор, базис): ");
                 input = Console.ReadLine();
+
                 bool keyCheck = false;
+
+                //if (!String.IsNullOrEmpty(input))
+                if (input != null)
+                {
+                    keyCheck = myDictionary.ContainsKey(input);
+                }
 
                 if (input == "exit")
                 {
                     break;
-                }
-
-                if (!String.IsNullOrEmpty(input))
-                {
-                    keyCheck = myDictionary.ContainsKey(input);
                 }
 
                 if (keyCheck)
