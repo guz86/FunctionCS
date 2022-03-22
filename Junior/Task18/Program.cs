@@ -22,22 +22,19 @@
                 Console.Write("Введите слово(бабенка, багаж, багор, базис): ");
                 input = Console.ReadLine();
 
+                if (input == "exit") break;
+                
                 bool keyCheck = false;
 
-                //if (!String.IsNullOrEmpty(input))
-                if (input != null)
-                {
-                    keyCheck = myDictionary.ContainsKey(input);
-                }
-
-                if (input == "exit")
-                {
-                    break;
-                }
-
+                if (input != null) keyCheck = myDictionary.ContainsKey(input);
+                
                 if (keyCheck)
                 {
                     Console.WriteLine($"\"{input}\" - {myDictionary[input]}");
+                }
+                else if (input == "")
+                {
+                    Console.WriteLine("Вы ничего не ввели");
                 }
                 else
                 {
