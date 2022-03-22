@@ -8,7 +8,6 @@
             Random rnd = new Random();
 
             //ver1
-
             int arraySize = 4; // от 1 до 9
             int[] myNumber = new int[arraySize];
             bool NumReapeat;
@@ -38,7 +37,7 @@
             Console.WriteLine(Convert.ToInt32(string.Join("", myNumber)));
 
             // чей то код
-            
+
             var digits = Enumerable.Range(0, 10).ToList();
             int result = 0;
 
@@ -51,6 +50,24 @@
             }
 
             Console.WriteLine(result);
+
+            // версия с телеги
+            int size = 4;
+            HashSet<int> setOfNumbers = new HashSet<int>(size);
+
+            while (setOfNumbers.Count < size)
+            {
+                setOfNumbers.Add(rnd.Next(0, 10));
+            }
+
+            // мой вывод
+            string myNumber1 = "";
+            foreach (var number in setOfNumbers)
+            {
+                myNumber1 += number;
+            }
+
+            Console.WriteLine(myNumber1);
         }
     }
 }
