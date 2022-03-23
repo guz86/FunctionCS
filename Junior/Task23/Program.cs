@@ -9,7 +9,9 @@
             // Создать класс отрисовщик, с методом, который отрисует игрока.
             //     Попрактиковаться в работе со свойствами.
 
+            Point point = new Point(3, 5);
+            Renderer renderer = new Renderer();
+            renderer.Draw(point.X, point.Y);
         }
-
     }
 }
