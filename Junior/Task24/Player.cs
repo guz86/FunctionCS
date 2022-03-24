@@ -15,12 +15,12 @@ public class Player
         Flag = flag;
     }
 
-    public void BanPlayer(int number)
+    public void BanPlayerFlag(int number)
     {
         Flag = true;
     }
 
-    public void NoBanPlayer(int number)
+    public void NoBanPlayerFlag(int number)
     {
         Flag = false;
     }

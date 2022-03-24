@@ -40,14 +40,14 @@ public class MyPlayers
     {
         Console.WriteLine("Введите номер игрока:");
         int.TryParse(Console.ReadLine(), out int number);
-        if (number < players.Count) players[number - 1].BanPlayer(number - 1);
+        if (number < players.Count) players[number - 1].BanPlayerFlag(number - 1);
     }
 
     public void NoBanPlayer(List<Player> players)
     {
         Console.WriteLine("Введите номер игрока:");
         int.TryParse(Console.ReadLine(), out int number);
-        if (number < players.Count) players[number - 1].NoBanPlayer(number - 1);
+        if (number < players.Count) players[number - 1].NoBanPlayerFlag(number - 1);
     }
 
     public void DelPlayer(List<Player> players)

@@ -11,7 +11,7 @@
 Имеет методы: AddPlayer, BanPlayer, NoBanPlayer, DelPlayer
 
 * **class Player** - класс игрока имеет Number, Name, Level, Flag, методы: 
-BanPlayer, NoBanPlayer для передачи Flag, и CorrectNumber для приведения
+BanPlayerFlag, NoBanPlayerFlag для передачи Flag, и CorrectNumber для приведения
 в порядок Number после удаления.
 
 * **class Program** - заполняется List<Player>, формируется меню.
