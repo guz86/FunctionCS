@@ -29,8 +29,11 @@ public class MyPlayers
         string checkFlag = Console.ReadLine();
         bool flag = false;
         if (checkFlag == "да") flag = true;
-        Player player = new Player(players.Count + 1, name, level, flag);
-        players.Add(player);
+        if (name != null && level != null)
+        {
+            Player player = new Player(players.Count + 1, name, level, flag);
+            players.Add(player);
+        }
     }
 
     public void BanPlayer(List<Player> players)
