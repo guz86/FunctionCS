@@ -7,14 +7,14 @@
     Создание самой БД не требуется, задание выполняется инструментами,
     которые вы уже изучили в рамках курса.
 
-* **class MyPlayers** - генерация случайными данными N игроков в List<Player>
+* **class MyPlayers** - генерация случайными данными N игроков в List<Player> Players
 Имеет методы: AddPlayer, BanPlayer, NoBanPlayer, DelPlayer
 
 * **class Player** - класс игрока имеет Number, Name, Level, Flag, методы: 
 BanPlayerFlag, NoBanPlayerFlag для передачи Flag, и CorrectNumber для приведения
 в порядок Number после удаления.
 
-* **class Program** - заполняется List<Player>, формируется меню.
+* **class Program** - создаем myPlayers через конструктор, и формируется меню.
 
 
 
