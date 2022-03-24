@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             List<Player> players = new List<Player>();
-            MyPlayers generatePlayers = new MyPlayers(10, players);
+            MyPlayers generatePlayers = new MyPlayers(5, players);
             while (true)
             {
                 Console.WriteLine("***** База Игроков *****");

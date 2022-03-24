@@ -51,7 +51,7 @@ public class MyPlayers
     {
         Console.WriteLine("Введите номер игрока:");
         int.TryParse(Console.ReadLine(), out int number);
-        if (number < players.Count) players.RemoveAt(number - 1);
+        if (number <= players.Count) players.RemoveAt(number - 1);
 
         foreach (var player in players)
         {
