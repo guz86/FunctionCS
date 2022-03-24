@@ -37,10 +37,6 @@ public class MyPlayers
     {
         Console.WriteLine("Введите номер игрока:");
         int.TryParse(Console.ReadLine(), out int number);
-        // foreach (var player in players)
-        // {
-        //     if (player.Number == number) player.BanPlayer(number);
-        // }
         if (number < players.Count) players[number - 1].BanPlayer(number - 1);
     }
 
@@ -48,10 +44,6 @@ public class MyPlayers
     {
         Console.WriteLine("Введите номер игрока:");
         int.TryParse(Console.ReadLine(), out int number);
-        // foreach (var player in players)
-        // {
-        //     if (player.Number == number) player.NoBanPlayer(number);
-        // }
         if (number < players.Count) players[number - 1].NoBanPlayer(number - 1);
     }
 
