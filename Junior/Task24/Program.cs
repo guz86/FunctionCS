@@ -4,12 +4,12 @@
     {
         static void Main(string[] args)
         {
-            List<Player> players = new List<Player>();
-            MyPlayers generatePlayers = new MyPlayers(5, players);
+            
+            MyPlayers myPlayers = new MyPlayers(5);
             while (true)
             {
                 Console.WriteLine("***** База Игроков *****");
-                foreach (var player in players)
+                foreach (var player in myPlayers.Players)
                 {
                     Console.WriteLine(
                         $"{player.Number}.\tИмя: {player.Name}\tУровень: {player.Level}\tБан: {player.Flag}");
@@ -24,16 +24,16 @@
                     switch (enter)
                     {
                         case 1:
-                            generatePlayers.AddPlayer(players);
+                            myPlayers.AddPlayer();
                             break;
                         case 2:
-                            generatePlayers.BanPlayer(players);
+                            myPlayers.BanPlayer();
                             break;
                         case 3:
-                            generatePlayers.NoBanPlayer(players);
+                            myPlayers.NoBanPlayer();
                             break;
                         case 4:
-                            generatePlayers.DelPlayer(players);
+                            myPlayers.DelPlayer();
                             break;
                         case 5:
                             return;
