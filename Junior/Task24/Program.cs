@@ -35,7 +35,6 @@
                         case 4:
                             generatePlayers.DelPlayer(players);
                             break;
-
                         case 5:
                             return;
                         default:
@@ -47,6 +46,5 @@
                 Console.Clear();
             }
         }
-
     }
 }
