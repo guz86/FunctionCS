@@ -16,3 +16,5 @@ BanPlayer, NoBanPlayer для передачи Flag, и CorrectNumber для п�
 
 * **class Program** - заполняется List<Player>, формируется меню.
 
+
+
