@@ -4,17 +4,10 @@
     {
         static void Main(string[] args)
         {
-            
             MyPlayers myPlayers = new MyPlayers(5);
             while (true)
             {
-                Console.WriteLine("***** База Игроков *****");
-                foreach (var player in myPlayers.Players)
-                {
-                    Console.WriteLine(
-                        $"{player.Number}.\tИмя: {player.Name}\tУровень: {player.Level}\tБан: {player.Flag}");
-                }
-
+                myPlayers.ShowPlayers();
                 Console.WriteLine();
                 Console.WriteLine(
                     "Выберите действие (1-5): 1 - добавить, 2 - забанить, 3 - разбанить, 4 - удалить, 5 - выход");
