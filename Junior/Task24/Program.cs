@@ -4,15 +4,6 @@
     {
         static void Main(string[] args)
         {
-            /* База данных игроков
-            Реализовать базу данных игроков и методы для работы с ней.
-            У игрока может быть порядковый номер, ник, уровень, флаг – забанен ли он(флаг - bool).
-            Реализовать возможность добавления игрока, бана игрока по порядковому номеру, разбана
-            игрока по порядковому номеру и удаление игрока.
-            Создание самой БД не требуется, задание выполняется инструментами,
-            которые вы уже изучили в рамках курса.
-            */
-
             List<Player> players = new List<Player>();
             GeneratePlayer generate = new GeneratePlayer(10, players);
             while (true)
@@ -79,8 +70,7 @@
             // {
             //     if (player.Number == number) player.BanPlayer(number);
             // }
-            if(number < players.Count) players[number-1].BanPlayer(number-1);
-            
+            if (number < players.Count) players[number - 1].BanPlayer(number - 1);
         }
 
         public static void NoBanPlayer(List<Player> players)
@@ -91,7 +81,7 @@
             // {
             //     if (player.Number == number) player.NoBanPlayer(number);
             // }
-            if(number < players.Count) players[number-1].NoBanPlayer(number-1);
+            if (number < players.Count) players[number - 1].NoBanPlayer(number - 1);
         }
 
         public static void DelPlayer(List<Player> players)
