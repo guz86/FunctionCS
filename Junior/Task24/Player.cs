@@ -2,11 +2,6 @@
 
 public class Player
 {
-    private int _number;
-    private string _name;
-    private int _level;
-    private bool _flag;
-
     public int Number { get; private set; }
     public string Name { get; }
     public int Level { get; }
