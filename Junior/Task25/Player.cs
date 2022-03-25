@@ -3,7 +3,7 @@
 public class Player
 {
     public int Money { get; private set; }
-    
+
     public List<Product> myProduct { get; private set; }
 
     public Player(int money)
@@ -14,18 +14,29 @@ public class Player
 
     public void BuyChooseProduct(Product product)
     {
-        
         myProduct.Add(product);
         Money -= product.Cost;
     }
+
     public void ShowPlayerProduct()
     {
-        Console.WriteLine("Продукты в пакете:");
-        foreach (var product in myProduct)
+        if (myProduct.Count > 0)
         {
-            Console.Write($"{product.Name}");
-            Console.WriteLine();
+            Console.WriteLine("Продукты в пакете:");
+            foreach (var product in myProduct)
+            {
+                Console.Write($"{product.Name}");
+                Console.WriteLine();
+            }
         }
-        Console.WriteLine($"В кошельке: {Money}");
+        else
+        {
+            Console.WriteLine("В пакете пусто");
+        }
+
+        if (Money > 0)
+        {
+            Console.WriteLine($"В кошельке: {Money}");
+        }
     }
 }
