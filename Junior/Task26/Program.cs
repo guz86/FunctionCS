@@ -16,30 +16,9 @@
             В верхней части программы должна выводиться полная информация о текущем рейсе или его отсутствии.
             */
 
-            Random rand = new Random();
             Station station = new Station();
-
-            while (true)
-            {
-                if (station.LineBoard.Count > 0)
-                {
-                    station.InfoLineBoard();
-                }
-                Console.WriteLine("Введите направление:");
-                string enterWay = Console.ReadLine();
-                if (enterWay != "")
-                {
-                    Way way = new Way(enterWay);
-                    way.BuyTiket(rand.Next(100, 1000));
-                    Console.WriteLine($"{way.WayPassengers} - пассажиров готовы к отправлению");
-                    Train train = new Train(way.WayPassengers);
-                    train.TrainLeaves();
-                    station.AddLineBoard(way);
-                }
-
-                Console.ReadKey();
-                Console.Clear();
-            }
+            station.Work();
+            
         }
     }
 }

@@ -5,7 +5,7 @@ public class Train
     // создаем поезд и добавляем разные по вместительности вагоны
     // в зависимости от пассажиров
     // отправить поезд и добавить информацию о рейсе
-    public int WagonsCount { get; set; }
+    public int WagonsCount { get; private set; }
 
     public Train(int countPassangers)
     {
