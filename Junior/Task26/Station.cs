@@ -2,8 +2,15 @@
 
 public class Station
 {
-    public List<string> LineBoard { get;  }
-
+    private List<string> _ways = new List<string>()
+    {
+        "Санкт-Петербург - Москва",
+        "Казань - Москва",
+        "Москва - Екатеринбург",
+        "Иваново - Кемерово"
+    };
+    public List<string> LineBoard { get; }
+    
     public Station()
     {
         LineBoard = new List<string>();
@@ -16,11 +23,14 @@ public class Station
 
     public void InfoLineBoard()
     {
+        Console.WriteLine("---------------------");
         Console.WriteLine("Информация о рейсах: ");
         foreach (var line in LineBoard)
         {
             Console.WriteLine($"* {line}");
         }
+        
+        Console.WriteLine("---------------------\n");
     }
 
     public void Work()
@@ -32,12 +42,16 @@ public class Station
             {
                 InfoLineBoard();
             }
-            Console.WriteLine("Введите направление:");
-            string enterWay = Console.ReadLine();
+
+            Console.WriteLine("Формируется направление:");
+            Thread.Sleep(1500);
+            string enterWay = _ways[rand.Next(0,_ways.Count)];
+            Console.WriteLine(enterWay);
             if (enterWay != "")
             {
                 Way way = new Way(enterWay);
-                way.BuyTiket(rand.Next(100, 1000));
+                way.BuyTiket(rand.Next(500, 1000));
+                Thread.Sleep(1500);
                 Console.WriteLine($"{way.WayPassengers} - пассажиров готовы к отправлению");
                 Train train = new Train(way.WayPassengers);
                 train.TrainLeaves();
@@ -49,6 +63,7 @@ public class Station
             {
                 return;
             }
+
             Console.Clear();
         }
     }

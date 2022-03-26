@@ -18,7 +18,6 @@
 
             Station station = new Station();
             station.Work();
-            
         }
     }
 }
