@@ -40,7 +40,7 @@ public class Train
                 Console.WriteLine($"{WagonsCount} вагон, с вместимостью на {сapacityWagonMin} человек, готов");
                 FreePlaceWagon(countPassangers);
             }
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
         Console.WriteLine($"Поезд с {WagonsCount} вагонами готов");
