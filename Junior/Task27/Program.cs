@@ -11,42 +11,47 @@
             Random random = new Random();
             int chooseAttack;
             Fighter mag = new Mag("Magusso", random.Next(700,900), random.Next(45,60));
-            Fighter warrior = new Warrior("WarrioOOOR", random.Next(1200,1500), random.Next(60,100));
+            // Fighter warrior = new Warrior("WarrioOOOR", random.Next(1200,1500), random.Next(60,100));
+            // Fighter healer = new Healer("HealerYoda", random.Next(600,900), random.Next(20,50));
+            Fighter necro = new Necromant("Necro", random.Next(600,900), random.Next(50,70));
 
             Console.WriteLine("---------------");
             mag.ShowStats();
-            warrior.ShowStats();
+            necro.ShowStats();
             Console.WriteLine("---------------");
             
-            while (mag.isAlive() && warrior.isAlive())
+            while (mag.isAlive() && necro.isAlive())
             {
+                
+
+                
                 Console.WriteLine("\n....Подготовка к атакам....\n");
                 chooseAttack = random.Next(1, 3);
                 Thread.Sleep(1500);
                 if (chooseAttack == 1)
                 {
-                    mag.TakeDamage(warrior.Damage);
-                    warrior.TakeDamage(mag.Damage); 
+                    mag.TakeDamage(necro.Damage);
+                    necro.TakeDamage(mag.Damage); 
                 }
                 else
                 {
                     Console.WriteLine("Противники готовят уникальные способности:");
-                    mag.TakeDamage(warrior.UniqueAbility());
-                    warrior.TakeDamage(mag.UniqueAbility());   
+                    mag.TakeDamage(necro.UniqueAbility());
+                    necro.TakeDamage(mag.UniqueAbility());   
                 }
             }
 
-            if (!mag.isAlive() && !warrior.isAlive())
+            if (!mag.isAlive() && !necro.isAlive())
             {
-                Console.WriteLine($"\n{mag.Name} и {warrior.Name} погибли");
+                Console.WriteLine($"\n{mag.Name} и {necro.Name} погибли");
             }
             else if (!mag.isAlive())
             {
                 Console.WriteLine($"\n{mag.Name} погиб");  
             }
-            else if (!warrior.isAlive())
+            else if (!necro.isAlive())
             {
-                Console.WriteLine($"\n{warrior.Name} погиб");
+                Console.WriteLine($"\n{necro.Name} погиб");
             }
         }
     }
