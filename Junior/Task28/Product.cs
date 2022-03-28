@@ -2,7 +2,7 @@
 
 public class Product
 {
-    public int Cost { get; set; }
+    public int Cost { get; }
 
     public Product(int cost)
     {

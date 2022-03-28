@@ -2,8 +2,8 @@
 
 public class Client
 {
-    public List<Product> ShoppingCart { get; set; }
-    public int Money { get; set; }
+    public List<Product> ShoppingCart { get; }
+    public int Money { get; private set; }
     private bool _shortMoney = true;
     private int _sumShopping;
 
