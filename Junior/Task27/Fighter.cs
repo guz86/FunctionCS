@@ -2,7 +2,7 @@
 
 public abstract class Fighter
 {
-    public string Name{ get; }
+    public string Name { get; }
     public int Health { get; protected set; }
     public int Damage { get; }
     public int Armor { get; protected set; }
@@ -28,9 +28,10 @@ public abstract class Fighter
         {
             Health = 0;
         }
+
         Console.WriteLine($"{Name} получает: {damage}, здоровье стало {Health}");
     }
-    
+
     public bool isAlive()
     {
         return Health > 0;

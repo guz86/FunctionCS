@@ -8,6 +8,7 @@ public class Healer : Fighter
     {
         Mana = 100;
     }
+
     public override int UniqueAbility()
     {
         Random random = new Random();
@@ -16,8 +17,9 @@ public class Healer : Fighter
         Console.WriteLine($"{Name} увеличивает здоровье, остатки маны: {Mana}");
         if (Mana > 0)
         {
-            Health *= random.Next(2,3);
+            Health *= random.Next(2, 3);
         }
+
         return Damage;
     }
 }
