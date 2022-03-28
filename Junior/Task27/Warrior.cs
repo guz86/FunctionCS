@@ -14,11 +14,15 @@ public class Warrior : Fighter
         {
             Armor = Armor * random.Next(2,4);
             Console.WriteLine($"{Name} вызывает АГР, Armor стал: {Armor}");
+            _agr = true;
         }
-        _agr = true;
+        
         if (_iAgr > 2)
         {
-            _agr = false; 
+            _agr = false;
+            Console.WriteLine("АГР снят.");
+            _iAgr = 0;
+            Armor = 15;
         }
         return Damage;
     }

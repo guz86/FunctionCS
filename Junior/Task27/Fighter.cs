@@ -30,6 +30,11 @@ public abstract class Fighter
         }
         Console.WriteLine($"{Name} получает: {damage}, здоровье стало {Health}");
     }
+    
+    public bool isAlive()
+    {
+        return Health > 0;
+    }
 
     public abstract int UniqueAbility();
 }

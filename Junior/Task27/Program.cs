@@ -10,15 +10,15 @@
             //     только его классу!
             Random random = new Random();
             int chooseAttack;
-            Fighter mag = new Mag("Magusso", random.Next(500,800), random.Next(70,100));
-            Fighter warrior = new Warrior("WarrioOOOR", random.Next(1200,1500), random.Next(100,150));
+            Fighter mag = new Mag("Magusso", random.Next(700,900), random.Next(45,60));
+            Fighter warrior = new Warrior("WarrioOOOR", random.Next(1200,1500), random.Next(60,100));
 
             Console.WriteLine("---------------");
             mag.ShowStats();
             warrior.ShowStats();
             Console.WriteLine("---------------");
             
-            while (mag.Health >  0 && warrior.Health > 0)
+            while (mag.isAlive() && warrior.isAlive())
             {
                 Console.WriteLine("\n....Подготовка к атакам....\n");
                 chooseAttack = random.Next(1, 3);
@@ -36,15 +36,15 @@
                 }
             }
 
-            if (mag.Health == 0 && warrior.Health == 0)
+            if (!mag.isAlive() && !warrior.isAlive())
             {
                 Console.WriteLine($"\n{mag.Name} и {warrior.Name} погибли");
             }
-            else if (mag.Health == 0)
+            else if (!mag.isAlive())
             {
                 Console.WriteLine($"\n{mag.Name} погиб");  
             }
-            else if (warrior.Health == 0)
+            else if (!warrior.isAlive())
             {
                 Console.WriteLine($"\n{warrior.Name} погиб");
             }
