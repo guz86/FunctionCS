@@ -2,15 +2,16 @@
 
 public class Aquarium
 {
-    private Random _random = new Random();
+    private Random _random;
     
-    public int Count { get; set; }
-    public List<Fish> LifeFish { get; set; }
+    public int Count { get;}
+    public List<Fish> LifeFish { get;  }
 
     public Aquarium(int count = 10)
     {
         Count = count;
         LifeFish = new List<Fish>();
+        _random = new Random();
     }
 
     public void AddFish()
