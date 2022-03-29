@@ -10,11 +10,11 @@ public class Shop
         // Generate queueClients
         QueueClients = new Queue<Client>();
         Random random = new Random();
-        CountClients = random.Next(5,10);
+        CountClients = random.Next(5, 10);
         while (CountClients > 0)
         {
             // generate products for clients
-            int countProduct = random.Next(1,10);
+            int countProduct = random.Next(1, 10);
             List<Product> products = new List<Product>();
             while (countProduct > 0)
             {
