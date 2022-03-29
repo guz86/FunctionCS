@@ -3,8 +3,8 @@
 public class Soldier
 {
     public int HP { get; set; }
-    public string Skill { get; set; }
-    public int Damage { get; set; }
+    public string Skill { get; }
+    public int Damage { get;  }
     
     public Soldier(int hp, string skill, int damage)
     {
