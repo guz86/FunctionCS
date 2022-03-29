@@ -32,35 +32,36 @@ public class Squad
 
     public void TakeDamage(int damage)
     {
-        int randomSelectSoldier = _random.Next(0, Soldiers.Count);
-        int randomSelectSoldierMedic = _random.Next(0, Soldiers.Count);
+        int idRandomSelectSoldier = _random.Next(0, Soldiers.Count);
+        Soldier randomSelectSoldier = Soldiers[idRandomSelectSoldier];
+        Soldier randomSelectSoldierMedic = Soldiers[_random.Next(0, Soldiers.Count)];
         
-        Soldiers[randomSelectSoldier].TakeDamageSolder(damage);
+        randomSelectSoldier.TakeDamageSolder(damage);
         ConsoleColor defaultColor = Console.ForegroundColor;
         
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"В {SquadName} - {Soldiers[randomSelectSoldier].Skill}" +
-                          $" получил {damage} урона, у него {Soldiers[randomSelectSoldier].HP} HP");
+        Console.WriteLine($"В {SquadName} - {randomSelectSoldier.Skill}" +
+                          $" получил {damage} урона, у него {randomSelectSoldier.HP} HP");
 
         // медик
-        if (Soldiers[randomSelectSoldier].Skill == "Medic")
+        if (randomSelectSoldier.Skill == "Medic")
         {
-            if (Soldiers[randomSelectSoldier].HP != 0 && Soldiers[randomSelectSoldierMedic].HP < 90)
+            if (randomSelectSoldier.HP != 0 && randomSelectSoldierMedic.HP < 90)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Soldiers[randomSelectSoldierMedic].HP += 40;
-                Console.WriteLine($"В {SquadName} {Soldiers[randomSelectSoldier].Skill} восстановил " +
-                                  $"{Soldiers[randomSelectSoldierMedic].Skill} - " +
-                                  $"{Soldiers[randomSelectSoldierMedic].HP} HP");
+                randomSelectSoldierMedic.HP += 40;
+                Console.WriteLine($"В {SquadName} {randomSelectSoldier.Skill} восстановил " +
+                                  $"{randomSelectSoldierMedic.Skill} - " +
+                                  $"{randomSelectSoldierMedic.HP} HP");
             }
         }
         
         // если убит
-        if (Soldiers[randomSelectSoldier].HP == 0)
+        if (randomSelectSoldier.HP == 0)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine($" - в {SquadName} убит {Soldiers[randomSelectSoldier].Skill}");
-            Soldiers.RemoveAt(randomSelectSoldier);
+            Console.WriteLine($" - в {SquadName} убит {randomSelectSoldier.Skill}");
+            Soldiers.Remove(randomSelectSoldier);
         }
 
         Console.ForegroundColor = defaultColor;
