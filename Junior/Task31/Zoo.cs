@@ -3,7 +3,7 @@
 public class Zoo
 {
     private Random _random;
-    public List<House> Houses { get;  }
+    public List<House> Houses { get; }
 
     public Zoo()
     {
@@ -14,17 +14,13 @@ public class Zoo
 
     private void AddHouses()
     {
-        Houses.Add(new House("Вольер для сурикатов", 
-            ListAnimal(10, "Сурикаты")));
-        
-        Houses.Add(new House("Вольер для лошадей",
-            ListAnimal(5, "Лошади")));
-        
-        Houses.Add(new House("Вольер для кабанов",
-            ListAnimal(7, "Кабаны")));
-        
-        Houses.Add(new House("Вольер для медведей", 
-            ListAnimal(1, "Медведи")));
+        Houses.Add(new House("Вольер для сурикатов", ListAnimal(10, "Сурикаты")));
+
+        Houses.Add(new House("Вольер для лошадей", ListAnimal(5, "Лошади")));
+
+        Houses.Add(new House("Вольер для кабанов", ListAnimal(7, "Кабаны")));
+
+        Houses.Add(new House("Вольер для медведей", ListAnimal(1, "Медведи")));
     }
 
     private List<Animal> ListAnimal(int count, string name)
@@ -32,17 +28,18 @@ public class Zoo
         List<Animal> animals = new List<Animal>();
         for (int i = 0; i < count; i++)
         {
-            
             animals.Add(AddAnimal(name));
         }
+
         return animals;
     }
+
     private Animal AddAnimal(string name)
     {
         // пол
-        string sex = "f";
+        string sex = "Ж";
         int chooseSex = _random.Next(0, 2);
-        if (chooseSex == 0) sex = "m";
+        if (chooseSex == 0) sex = "М";
         Animal animal;
         switch (name)
         {
@@ -61,8 +58,8 @@ public class Zoo
             default:
                 animal = new Animal(sex, ".....");
                 break;
-            
         }
+
         return animal;
     }
 
@@ -71,19 +68,17 @@ public class Zoo
         while (true)
         {
             Console.WriteLine("Зоопарк. Выберите вольер(1-4) (5 выход):");
-            
+
             int.TryParse(Console.ReadLine(), out int chooseHouse);
             if (chooseHouse > 0 && chooseHouse < 5)
             {
-                Houses[chooseHouse-1].ShowInfo();
+                Houses[chooseHouse - 1].ShowInfo();
             }
 
             if (chooseHouse == 5) return;
 
             Console.ReadKey();
             Console.Clear();
-
         }
     }
 }
-

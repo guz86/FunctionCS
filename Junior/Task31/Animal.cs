@@ -2,9 +2,9 @@
 
 public class Animal
 {
-    public string Sex { get;  }
-    public string Sound { get;  }
-    
+    public string Sex { get; }
+    public string Sound { get; }
+
     public Animal(string sex, string sound)
     {
         Sex = sex;
