@@ -7,23 +7,24 @@ public class Zoo
 
     public Zoo()
     {
+        _random = new Random();
         Houses = new List<House>();
         AddHouses();
     }
 
     private void AddHouses()
     {
-        Houses.Add(new House("Сурикаты", 
-            10, ListAnimal(10, "Сурикаты")));
+        Houses.Add(new House("Вольер для сурикатов", 
+            ListAnimal(10, "Сурикаты")));
         
-        Houses.Add(new House("Лошади", 
-            10, ListAnimal(5, "Лошади")));
+        Houses.Add(new House("Вольер для лошадей",
+            ListAnimal(5, "Лошади")));
         
-        Houses.Add(new House("Кабаны", 
-            10, ListAnimal(7, "Кабаны")));
+        Houses.Add(new House("Вольер для кабанов",
+            ListAnimal(7, "Кабаны")));
         
-        Houses.Add(new House("Медведи", 
-            10, ListAnimal(1, "Медведи")));
+        Houses.Add(new House("Вольер для медведей", 
+            ListAnimal(1, "Медведи")));
     }
 
     private List<Animal> ListAnimal(int count, string name)
@@ -39,7 +40,6 @@ public class Zoo
     private Animal AddAnimal(string name)
     {
         // пол
-        _random = new Random();
         string sex = "f";
         int chooseSex = _random.Next(0, 2);
         if (chooseSex == 0) sex = "m";
