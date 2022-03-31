@@ -1,14 +1,12 @@
-﻿using System.Linq;
-
-namespace Task33;
+﻿namespace Task33;
 
 public class Finder
 {
-    private List<Criminal> criminals = new List<Criminal>();
+    private List<Criminal> _criminals = new List<Criminal>();
     private Random _random = new Random();
-    private int inputGrowth;
-    private int inputWeight;
-    private string inputNation;
+    private int _inputGrowth;
+    private int _inputWeight;
+    private string _inputNation = "";
 
     public void Start()
     {
@@ -17,7 +15,7 @@ public class Finder
         {
             InputDetective();
             OutputResult();
-            
+
             Console.ReadKey();
             Console.Clear();
         }
@@ -27,16 +25,13 @@ public class Finder
     {
         for (int i = 0; i < count; i++)
         {
-            Criminal newCriminal = new Criminal("Иванов Иван Иванович",
-                false,
-                _random.Next(160,210),
-                _random.Next(40,200),
-                "русский");
-            criminals.Add(newCriminal);
+            Criminal newCriminal = new Criminal("Иванов Иван Иванович", false, _random.Next(160, 210),
+                _random.Next(40, 200), "русский");
+            _criminals.Add(newCriminal);
         }
 
         Console.WriteLine("------база-------");
-        foreach (var criminal in criminals)
+        foreach (var criminal in _criminals)
         {
             AboutCriminal(criminal);
         }
@@ -47,37 +42,51 @@ public class Finder
     private void InputDetective()
     {
         Console.Write("Введите рост:\t");
-        int.TryParse(Console.ReadLine(), out inputGrowth);
+        int.TryParse(Console.ReadLine(), out _inputGrowth);
         Console.Write("Введите вес:\t");
-        int.TryParse(Console.ReadLine(), out inputWeight);
+        int.TryParse(Console.ReadLine(), out _inputWeight);
         Console.Write("Введите национальность:\t");
-        inputNation = Console.ReadLine();
-        
+        _inputNation = Console.ReadLine();
     }
-    
+
     private void OutputResult()
     {
-        var outputCriminals = from Criminal criminal in criminals
-            where criminal.Growth == inputGrowth
-                  && criminal.Weight == inputWeight
-                  && criminal.Nation == inputNation
-                  && criminal.State == false
+        /*
+        var resultSearch = _criminals.Where(
+            criminal => criminal.Growth == _inputGrowth
+                        && criminal.Weight == _inputWeight
+                        && criminal.Nation == _inputNation
+                        && criminal.State == false);
+        
+        var foundCriminals = _criminals
+            .Where(criminal => criminal.Nation.ToLower() == _inputNation.ToLower())
+            .Where(criminal => criminal.Growth == _inputGrowth)
+            .Where(criminal => criminal.Weight == _inputWeight)
+            .Where(criminal => criminal.State == false)
+            .ToList();
+        */
+        var outputCriminals = from Criminal criminal in _criminals
+            where criminal.Growth == _inputGrowth && criminal.Weight == _inputWeight &&
+                  criminal.Nation.ToLower() == _inputNation.ToLower().Trim() && criminal.State == false
             select criminal;
-        //outputCriminals.ToList();
-        Console.WriteLine("\nРезультат поиска:\n");
-        foreach (var outputCriminal in outputCriminals)
+        var criminalsList = outputCriminals.ToList();
+        if (criminalsList.Count > 0)
         {
-            AboutCriminal(outputCriminal);
+            Console.WriteLine("\nРезультат поиска:\n");
+            foreach (var outputCriminal in criminalsList)
+            {
+                AboutCriminal(outputCriminal);
+            }
         }
-
+        else
+        {
+            Console.WriteLine("\nНичего не найдено:\n");
+        }
     }
 
     private void AboutCriminal(Criminal criminal)
     {
-        Console.WriteLine($"ФИО: {criminal.FIO}, " +
-                          $"рост: {criminal.Growth}, " +
-                          $"вес: {criminal.Weight}, " +
+        Console.WriteLine($"ФИО: {criminal.Fio}, " + $"рост: {criminal.Growth}, " + $"вес: {criminal.Weight}, " +
                           $"национальность: {criminal.Nation}\n");
     }
-    
 }
