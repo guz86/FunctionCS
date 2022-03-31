@@ -2,7 +2,7 @@
 
 public class Storage
 {
-    private Random _random;
+    private Random _random = new Random();
     List<Part> Parts { get; set; }
 
     public Storage(int countPart)
@@ -22,7 +22,6 @@ public class Storage
     // 10 Part, по 500
     private Part CreatePart()
     {
-        _random = new Random();
         Part part = new Part(_random.Next(100000, 999999), _random.Next(500, 10000), _random.Next(5, 10),
             _random.Next(500, 10000));
         return part;
@@ -48,7 +47,7 @@ public class Storage
 
         return idPart;
     }
-    
+
     public void RepairPart(int partId)
     {
         for (int i = 0; i < Parts.Count; i++)
@@ -57,6 +56,7 @@ public class Storage
             {
                 Parts[i].Count--;
             }
+
             // убираем со склада деталь с данным id
             if (Parts[i].Count == 0)
             {
@@ -64,23 +64,26 @@ public class Storage
             }
         }
     }
-    
+
     public int CostPart(int idPart)
     {
-        for (int i = 0; i < Parts.Count; i++)
+        for (int i = 0; i < Parts.Count; )
         {
             Parts[i].Id = idPart;
+            i++;
             return Parts[i].Cost;
+            
         }
 
         return 0;
     }
-    
+
     public int WorkPricePart(int idPart)
     {
-        for (int i = 0; i < Parts.Count; i++)
+        for (int i = 0; i < Parts.Count; )
         {
             Parts[i].Id = idPart;
+            i++;
             return Parts[i].WorkPrice;
         }
 
