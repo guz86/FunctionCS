@@ -2,7 +2,6 @@
 
 public class Part
 {
-
     public int Id { get; set; }
     public int Cost { get; set; }
     public int Count { get; set; }
