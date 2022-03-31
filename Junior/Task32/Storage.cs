@@ -63,7 +63,27 @@ public class Storage
                 Parts.RemoveAt(i);
             }
         }
+    }
+    
+    public int CostPart(int idPart)
+    {
+        for (int i = 0; i < Parts.Count; i++)
+        {
+            Parts[i].Id = idPart;
+            return Parts[i].Cost;
+        }
 
-        
+        return 0;
+    }
+    
+    public int WorkPricePart(int idPart)
+    {
+        for (int i = 0; i < Parts.Count; i++)
+        {
+            Parts[i].Id = idPart;
+            return Parts[i].WorkPrice;
+        }
+
+        return 0;
     }
 }

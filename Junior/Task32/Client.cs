@@ -10,4 +10,5 @@ public class Client
         Money = money;
         Id = 0;
     }
+
 }
