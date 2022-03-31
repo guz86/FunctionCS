@@ -48,4 +48,22 @@ public class Storage
 
         return idPart;
     }
+    
+    public void RepairPart(int partId)
+    {
+        for (int i = 0; i < Parts.Count; i++)
+        {
+            if (Parts[i].Id == partId)
+            {
+                Parts[i].Count--;
+            }
+            // убираем со склада деталь с данным id
+            if (Parts[i].Count == 0)
+            {
+                Parts.RemoveAt(i);
+            }
+        }
+
+        
+    }
 }
