@@ -72,7 +72,7 @@ public class Finder
 
     }
 
-    public void AboutCriminal(Criminal criminal)
+    private void AboutCriminal(Criminal criminal)
     {
         Console.WriteLine($"ФИО: {criminal.FIO}, " +
                           $"рост: {criminal.Growth}, " +
