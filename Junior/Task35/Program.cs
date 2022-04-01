@@ -36,13 +36,13 @@
                     switch (input)
                     {
                         case 1:
-                            SortByFioSick(sicks);
+                            ShowSick(SortByFioSick(sicks));
                             break;
                         case 2:
-                            SortByOldSick(sicks);
+                            ShowSick(SortByOldSick(sicks));
                             break;
                         case 3:
-                            ShowSpecificDiseaseSick(sicks);
+                            ShowSick(SpecificDiseaseSick(sicks));
                             break;
                         case 4:
                             ShowSick(sicks);
@@ -57,23 +57,20 @@
             }
         }
 
-        private static void SortByFioSick(List<Sick> sicks)
+        private static List<Sick> SortByFioSick(List<Sick> sicks)
         {
-            sicks = sicks.OrderBy(sick => sick.Fio).ToList();
-            ShowSick(sicks);
+           return sicks.OrderBy(sick => sick.Fio).ToList();
         }
 
-        private static void SortByOldSick(List<Sick> sicks)
+        private static List<Sick>  SortByOldSick(List<Sick> sicks)
         {
-            sicks = sicks.OrderBy(sick => sick.Old).ToList();
-            ShowSick(sicks);
+            return sicks.OrderBy(sick => sick.Old).ToList();  
         }
 
-        private static void ShowSpecificDiseaseSick(List<Sick> sicks)
+        private static List<Sick> SpecificDiseaseSick(List<Sick> sicks)
         {
             string inputDisease = Console.ReadLine();
-            var specificDisease = sicks.Where(sick => sick.Disease == inputDisease).ToList();
-            ShowSick(specificDisease);
+            return sicks.Where(sick => sick.Disease == inputDisease).ToList();
         }
         private static void ShowSick(List<Sick> sicks)
         {
