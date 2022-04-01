@@ -10,7 +10,7 @@ public class Finder
 
     public void Start()
     {
-        GenerateCriminal(5);
+        GenerateCriminal(8);
         while (true)
         {
             InputDetective();
@@ -23,10 +23,35 @@ public class Finder
 
     private void GenerateCriminal(int count)
     {
+        string[] names = 
+        {
+            "Иванов Иван Иванович",
+            "Фокин Аскольд Антонинович",
+            "Назаров Виталий Артемович",
+            "Носов Илья Робертович",
+            "Муравьёв Глеб Тимофеевич",
+            "Никифоров Харитон Лаврентьевич",
+            "Власова Анна Еремеевна",
+            "Киселёва Вилора Германновна",
+            "Соболева Агата Авдеевна"
+        };
+        string[] national = 
+        {
+            "русский",
+            "американец",
+            "японец",
+            "белорус",
+            "казах",
+            "немец",
+            "поляк",
+            "литовец",
+            "англичанин"
+        };
+        
         for (int i = 0; i < count; i++)
         {
-            Criminal newCriminal = new Criminal("Иванов Иван Иванович", false, _random.Next(160, 210),
-                _random.Next(40, 200), "русский");
+            Criminal newCriminal = new Criminal(names[i], false, _random.Next(160, 210),
+                _random.Next(40, 200), national[i]);
             _criminals.Add(newCriminal);
         }
 
