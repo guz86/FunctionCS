@@ -42,9 +42,11 @@ public class Finder
     private void InputDetective()
     {
         Console.Write("Введите рост:\t");
-        int.TryParse(Console.ReadLine(), out _inputGrowth);
+        //int.TryParse(Console.ReadLine(), out _inputGrowth);
+        _inputGrowth = CheckValue();
         Console.Write("Введите вес:\t");
-        int.TryParse(Console.ReadLine(), out _inputWeight);
+        _inputWeight = CheckValue();
+        //int.TryParse(Console.ReadLine(), out _inputWeight);
         Console.Write("Введите национальность:\t");
         _inputNation = Console.ReadLine();
     }
@@ -66,8 +68,10 @@ public class Finder
             .ToList();
         */
         var outputCriminals = from Criminal criminal in _criminals
-            where criminal.Growth == _inputGrowth && criminal.Weight == _inputWeight &&
-                  criminal.Nation.ToLower() == _inputNation.ToLower().Trim() && criminal.State == false
+            where criminal.Growth == _inputGrowth 
+                  && criminal.Weight == _inputWeight 
+                  && criminal.Nation.ToLower() == _inputNation.ToLower().Trim() 
+                  && criminal.State == false
             select criminal;
         var criminalsList = outputCriminals.ToList();
         if (criminalsList.Count > 0)
@@ -89,4 +93,17 @@ public class Finder
         Console.WriteLine($"ФИО: {criminal.Fio}, " + $"рост: {criminal.Growth}, " + $"вес: {criminal.Weight}, " +
                           $"национальность: {criminal.Nation}\n");
     }
+    
+    // проверка на корректность ввода данных
+    private int CheckValue()
+    {
+        int result = 0;
+        while (!int.TryParse(Console.ReadLine(), out result))
+        {
+            Console.WriteLine("Введите верные данные");
+        }
+
+        return result;
+    }
+ 
 }
