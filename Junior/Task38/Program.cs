@@ -47,6 +47,18 @@
             {
                 Console.WriteLine($"{soldier.Info}");
             }
+            //3
+            var soldiersNameRank3 = soldiers.Select(soldier => new
+            {
+                soldier.Name,
+                soldier.Rank
+            }).ToList();
+            Console.WriteLine("soldiersNameRank3");
+            foreach (var soldier in soldiersNameRank3)
+            {
+                Console.WriteLine($"{soldier.Name} / {soldier.Rank}");
+            }
+
             Console.WriteLine();
             //1
             soldiers2 = Regroupment2(soldiers, soldiers2);
