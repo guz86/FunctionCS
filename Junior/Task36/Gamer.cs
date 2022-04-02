@@ -12,4 +12,8 @@ public class Gamer
         Level = level;
         Power = power;
     }
+    public void PrintGamer()
+    {
+        Console.WriteLine($"{Name}\tLevel: {Level}\tPower: {Power}");
+    }
 }

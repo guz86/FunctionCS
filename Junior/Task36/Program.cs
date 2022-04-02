@@ -45,11 +45,10 @@
 
             foreach (var gamer in gamers)
             {
-                Console.Write($"{gamer.Name}\tLevel: {gamer.Level}\tPower: {gamer.Power}");
-                Console.WriteLine();
+                gamer.PrintGamer();
             }
         }
-
+        
         public static void ColorTitleString(string title, ConsoleColor color )
         {
             ConsoleColor def = Console.ForegroundColor;
