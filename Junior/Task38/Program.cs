@@ -62,20 +62,31 @@
             Console.WriteLine();
             //1
             soldiers2 = Regroupment2(soldiers, soldiers2);
-            soldiers = Regroupment1(soldiers, soldiers2);
+            soldiers = Regroupment1(soldiers);
+            
+            Console.WriteLine("soldiers");
             SoldiersNameRank(soldiers);
+            
+            Console.WriteLine("soldiers2");
             SoldiersNameRank(soldiers2);
             //2
+            /*
             var soldiers3 = Regroupment2(soldiers, soldiers2);
             soldiers = soldiers.Except(soldiers3).ToList();
             soldiers2.AddRange(soldiers3);
+            
+            Console.WriteLine("soldiers");
+            SoldiersNameRank(soldiers);
+            Console.WriteLine("soldiers2");
+            SoldiersNameRank(soldiers2);
+             */
         }
 
         private static void SoldiersNameRank(List<Soldier> soldiers)
         {
             foreach (var soldier in soldiers)
             {
-                Console.WriteLine($"{soldier.Name}\t {soldier.Rank}");
+                Console.WriteLine($"{soldier.Name}\t {soldier.Rank}\t {soldier.Weapon}\t {soldier.Period}");
             }
 
             Console.WriteLine();
@@ -91,7 +102,7 @@
             return listSolders2;
         }
 
-        private static List<Soldier> Regroupment1(List<Soldier> listSolders, List<Soldier> listSolders2)
+        private static List<Soldier> Regroupment1(List<Soldier> listSolders)
         {
             List<Soldier> listStartSymbol =
                 listSolders.Where(listSolder => listSolder.Name.ToUpper().StartsWith("Б")).ToList();
