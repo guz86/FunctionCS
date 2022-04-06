@@ -55,6 +55,33 @@
 
                 Console.WriteLine();
             }
+            
+            
+            
+            // чтоб массив выводил с одной увеличинной  буквой вот к приму чтоб так   "sUn", "rOn", "tUe"
+            
+            string[] array = { "sun", "ron", "tue" };
+            for (int j = 0; j < array.Length; j++)
+            {
+                for (int k = 0; k < array[i].Length; k++)
+                {
+                    if (k == 1)
+                    {
+                        Console.Write(array[j][k].ToString().ToUpper());
+                    }
+                    else
+                    {
+                        Console.Write(array[j][k]);
+                    }
+                }
+                Console.WriteLine();
+            }
+            
+        
+        
+        
+        
+        
         }
     }
 }
